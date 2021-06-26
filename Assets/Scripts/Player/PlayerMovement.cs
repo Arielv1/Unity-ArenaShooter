@@ -67,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
         {
             rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
-        Debug.Log(isGrounded);
     }
 
     void Crouch()
