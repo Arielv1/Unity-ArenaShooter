@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerCameraController : MonoBehaviour
 {
-    public Transform camera;
-    public float mouseSensitivity = 120f; // TODO - add slider for mouse sensitivity ?
+    public Camera camera;
+    public float mouseSensitivity = 240f; // TODO - add slider for mouse sensitivity ?
     private float headRotation = 0f;
     //[SerializeField] float limitHeadRotation = 90; // 90 degrees
     // Start is called before the first frame update
@@ -15,6 +15,7 @@ public class PlayerCameraController : MonoBehaviour
         // locks mouse to game view, press ESC to exit
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        camera = Camera.main;
     }
 
     // Update is called once per frame
@@ -28,7 +29,7 @@ public class PlayerCameraController : MonoBehaviour
         headRotation += y;
         //headRotation = Mathf.Clamp(headRotation, -limitHeadRotation, limitHeadRotation);
 
-        camera.localEulerAngles = new Vector3(headRotation, 0, 0);
+        camera.transform.localEulerAngles = new Vector3(headRotation, 0, 0);
     }
 }
 

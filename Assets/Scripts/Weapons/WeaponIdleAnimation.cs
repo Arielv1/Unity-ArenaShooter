@@ -28,7 +28,6 @@ public class WeaponIdleAnimation : MonoBehaviour
     void RotationAnimation()
     {
         rotationAngle = (rotationAngle > 360f) ? 0f : rotationAngle + rotationStep;
-        Debug.Log(this.transform.eulerAngles);
         this.transform.Rotate(0f, rotationStep, 0f, Space.World);
         //this.transform.rotation = Quaternion.Euler(this.transform.rotation.x, rotationAngle, this.transform.rotation.z);
     }

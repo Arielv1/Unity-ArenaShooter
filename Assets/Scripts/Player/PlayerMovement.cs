@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         realSpeed = movementSpeedBase;
         yScaleBase = this.transform.localScale.y;
         yScaleCrouch = yScaleBase / 4;
+        StartCoroutine(GiveCameraControl());
     }
 
     // Update is called once per frame
@@ -97,6 +98,13 @@ public class PlayerMovement : MonoBehaviour
         {
             realSpeed = movementSpeedBase;
         }
+    }
+
+    IEnumerator GiveCameraControl()
+    {
+        // IEnumerator is used to fix bug when camera is snapped upon game laucnh
+        yield return new WaitForSeconds(0.2f);
+        gameObject.AddComponent<PlayerCameraController>();
     }
 
 }
