@@ -15,11 +15,11 @@ F:/Unity/Project/Unity-ArenaShooter
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-63092
+52344
 Successfully changed project path to: F:/Unity/Project/Unity-ArenaShooter
 F:/Unity/Project/Unity-ArenaShooter
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 122.11 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 147.78 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.2.4f1 (becced5a802b)
 [Subsystems] Discovering subsystems at path F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/Resources/UnitySubsystems
@@ -35,185 +35,14 @@ Initialize mono
 Mono path[0] = 'F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/Managed'
 Mono path[1] = 'F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56116
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56544
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003666 seconds.
+Registered in 0.068006 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 131.53 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 89.95 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.593 seconds
-Platform modules already initialized, skipping
-Registering precompiled user dll's ...
-Registered in 0.003822 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.684 seconds
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.23 seconds
-Refreshing native plugins compatible for Editor in 3.11 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1521 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 76.5 MB.
-System memory in use after: 76.6 MB.
-
-Unloading 69 unused Assets to reduce memory usage. Loaded Objects now: 1966.
-Total: 7.053000 ms (FindLiveObjects: 1.925000 ms CreateObjectMapping: 0.729800 ms MarkObjects: 3.917200 ms  DeleteObjects: 0.474600 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/About/Readme.asset
-  artifactKey: Guid(83c2ed844a8c74b779a4c823d16594b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/About/Readme.asset using Guid(83c2ed844a8c74b779a4c823d16594b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bf14ea5d2b59580f61f3e2567f9232a') in 0.171973 seconds
-  Import took 0.270420 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1763.295790 seconds.
-  path: Assets/Scripts/GrenadeThrower.cs
-  artifactKey: Guid(a7161b85580929e4a8278a3b1b8999de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GrenadeThrower.cs using Guid(a7161b85580929e4a8278a3b1b8999de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a698af2601128c1c5ca07aaf3026db85') in 0.052016 seconds
-  Import took 0.139530 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 184.636494 seconds.
-  path: Assets/Scripts/GrenadeThrower.cs
-  artifactKey: Guid(a7161b85580929e4a8278a3b1b8999de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GrenadeThrower.cs using Guid(a7161b85580929e4a8278a3b1b8999de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0aac6883bd8bc2c95f8fca3a88327162') in 0.007505 seconds
-  Import took 0.048086 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 47.953405 seconds.
-  path: Assets/Scripts/GrenadeThrower.cs
-  artifactKey: Guid(a7161b85580929e4a8278a3b1b8999de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/GrenadeThrower.cs using Guid(a7161b85580929e4a8278a3b1b8999de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95efd0e73d770c85e7a164f0b2ead2b4') in 0.007496 seconds
-  Import took 0.049429 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001435 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.42 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.394 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.04 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1483 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 73.9 MB.
-System memory in use after: 74.0 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1968.
-Total: 6.537000 ms (FindLiveObjects: 0.466400 ms CreateObjectMapping: 0.244200 ms MarkObjects: 5.781900 ms  DeleteObjects: 0.038200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 163.160507 seconds.
-  path: Assets/Prefabs
-  artifactKey: Guid(f17578b19a53cb14bab4131980d6a3ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs using Guid(f17578b19a53cb14bab4131980d6a3ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84b29a8ffd8c9718d8130f1afda58a9f') in 0.109217 seconds
-  Import took 0.148512 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 147.441388 seconds.
-  path: Assets/AssetStore/Sci-Fi Rifle/Sci-Fi Rifle_fbx.FBX
-  artifactKey: Guid(b5742c35cad19b945bc129c719875b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AssetStore/Sci-Fi Rifle/Sci-Fi Rifle_fbx.FBX using Guid(b5742c35cad19b945bc129c719875b2d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f55ba6912745d9a5844f7c6e4da7a53') in 0.903711 seconds
-  Import took 0.940983 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.717122 seconds.
-  path: Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/Scripts
-  artifactKey: Guid(eddea875761715844b0901e16bdb49ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/Scripts using Guid(eddea875761715844b0901e16bdb49ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c71897cee30aac21adca4c8c1a550616') in 0.009191 seconds
-  Import took 0.045573 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.990334 seconds.
-  path: Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/Scripts/Editor
-  artifactKey: Guid(859610b2291d44b42831dc3d02c34958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/Scripts/Editor using Guid(859610b2291d44b42831dc3d02c34958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acb11e863f5afb9c5b6c707339333ed2') in 0.009333 seconds
-  Import took 0.072524 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.828137 seconds.
-  path: Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/Scripts/Editor/PackageChecker
-  artifactKey: Guid(f0b9ec4ed56461443bda931e699c6667) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/Scripts/Editor/PackageChecker using Guid(f0b9ec4ed56461443bda931e699c6667) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd7da3e5afa805caed5d1416dba70e58') in 0.013637 seconds
-  Import took 0.038315 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.496487 seconds.
-  path: Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/Scripts/Editor/PackageChecker/PackageChecker.cs
-  artifactKey: Guid(41b92534367b5b9418d1af72810e5bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AssetStore/SNAPS-OfficeProps/_SNAPS_PrototypingAssets/Scripts/Editor/PackageChecker/PackageChecker.cs using Guid(41b92534367b5b9418d1af72810e5bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '794d29313dc2333f9cb01dd5cdd40ee0') in 0.037082 seconds
-  Import took 0.065333 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001828 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.40 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
-
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.122 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.52 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1483 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 77.3 MB.
-System memory in use after: 77.4 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1980.
-Total: 4.589100 ms (FindLiveObjects: 0.565300 ms CreateObjectMapping: 0.204900 ms MarkObjects: 3.792600 ms  DeleteObjects: 0.022500 ms)
-
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
