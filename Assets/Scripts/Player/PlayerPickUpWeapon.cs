@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPickUpGun : MonoBehaviour
+public class PlayerPickUpWeapon : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject PlayerGun;
@@ -24,7 +24,7 @@ public class PlayerPickUpGun : MonoBehaviour
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
         {
             if (hit.distance < 4 && 
-                hit.transform.gameObject.tag == "PickUpGun")
+                hit.transform.gameObject.tag == "PickUpGun" || hit.transform.gameObject.tag == "PickUpGrenade")
             {
                 if (!isTriggerHit)
                 {
@@ -36,12 +36,21 @@ public class PlayerPickUpGun : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    CrosshairDefault.SetActive(false);
-                    CrosshairPickUp.SetActive(false);
-                    CrosshairWeapon.SetActive(true);
+                    if (hit.transform.gameObject.tag == "PickUpGun")
+                    {
+                        CrosshairDefault.SetActive(false);
+                        CrosshairPickUp.SetActive(false);
+                        CrosshairWeapon.SetActive(true);
 
-                    PlayerGun.SetActive(true);
-                    hit.transform.gameObject.SetActive(false);
+                        PlayerGun.SetActive(true);
+                        hit.transform.gameObject.SetActive(false);
+                    } 
+                    else if(hit.transform.gameObject.tag == "PickUpGrenade")
+                    {
+                        GetComponent<GrenadeThrower>().IncrementNumGrenades();
+                        hit.transform.gameObject.SetActive(false);
+                    }
+                    
                 }
             }
             else

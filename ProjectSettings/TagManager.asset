@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PickUpGun
-  - PickUpGranade
   - Ground
+  - PickUpGrenade
   layers:
   - Default
   - TransparentFX

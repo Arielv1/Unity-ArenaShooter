@@ -9,8 +9,7 @@ public class Grenade : MonoBehaviour
     public float radius = 5f;
     public float force = 700f;
 
-    public GameObject exposionEffect; 
-
+    public GameObject exposionEffect;
     float countdown;
     bool hasExploded = false;
     
@@ -53,4 +52,6 @@ public class Grenade : MonoBehaviour
         // Remove grenade
         Destroy(gameObject);
     }
+
+  
 }
