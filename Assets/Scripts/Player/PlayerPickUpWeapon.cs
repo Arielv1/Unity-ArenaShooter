@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPickUpWeapon : MonoBehaviour
 {
@@ -10,9 +11,12 @@ public class PlayerPickUpWeapon : MonoBehaviour
     public GameObject CrosshairDefault;
     public GameObject CrosshairPickUp;
     public GameObject CrosshairWeapon;
+    public float hitRange = 4f;
+    public GameObject CanvasAmmo;
     void Start()
     {
-
+        CanvasAmmo = GameObject.FindGameObjectWithTag("CanvasAmmo");
+        CanvasAmmo.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,10 +25,9 @@ public class PlayerPickUpWeapon : MonoBehaviour
 
         RaycastHit hit;
         //raycast forward from main camera
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, hitRange))
         {
-            if (hit.distance < 4 && 
-                hit.transform.gameObject.tag == "PickUpGun" || hit.transform.gameObject.tag == "PickUpGrenade")
+            if (hit.transform.gameObject.tag == "PickUpGun" || hit.transform.gameObject.tag == "PickUpGrenade")
             {
                 if (!isTriggerHit)
                 {
@@ -50,7 +53,8 @@ public class PlayerPickUpWeapon : MonoBehaviour
                         GetComponent<GrenadeThrower>().IncrementNumGrenades();
                         hit.transform.gameObject.SetActive(false);
                     }
-                    
+
+                    CanvasAmmo.SetActive(true);
                 }
             }
             else
