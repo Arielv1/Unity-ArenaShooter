@@ -1,21 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GrenadeThrower : MonoBehaviour
 {
     public float throwForce = 40f;
     public GameObject grenadePrefab;
-    private int granadeCounter = 0;
+    private int grenadeCounter = 0;
+    public int maxNumOfGrenades = 3;
+    private GameObject[] UIGrenadesIcons;
 
+    private void Start()
+    {
+        UIGrenadesIcons = GameObject.FindGameObjectsWithTag("GrenadeIcon");
+        foreach (GameObject grenadeIcon in UIGrenadesIcons)
+        {
+            grenadeIcon.SetActive(false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && granadeCounter > 0)
+        if (Input.GetKeyDown(KeyCode.Q) && grenadeCounter > 0)
         {
             ThrowGrenade();
-            granadeCounter--;
-        }
+            grenadeCounter--;
+            UIGrenadesIcons[grenadeCounter].SetActive(false);
+        }       
     }
 
     void ThrowGrenade()
@@ -25,9 +37,17 @@ public class GrenadeThrower : MonoBehaviour
         rb.AddForce(transform.forward * throwForce, ForceMode.VelocityChange);
     }
 
-    public void IncrementNumGrenades()
+    public bool IncrementNumGrenades()
     {
-        granadeCounter++;
+        if (grenadeCounter < maxNumOfGrenades)
+        {
+            UIGrenadesIcons[grenadeCounter].SetActive(true);
+            grenadeCounter++;
+            return true;
+        }
+        return false;
+        
+        
     }
 
 }

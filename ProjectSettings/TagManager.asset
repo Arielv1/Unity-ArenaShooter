@@ -9,6 +9,7 @@ TagManager:
   - PickUpGrenade
   - CanvasAmmo
   - PlayerWeapon
+  - GrenadeIcon
   layers:
   - Default
   - TransparentFX

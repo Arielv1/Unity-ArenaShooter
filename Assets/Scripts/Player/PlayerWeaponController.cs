@@ -63,8 +63,10 @@ public class PlayerWeaponController : MonoBehaviour
 
                     else if(hit.transform.gameObject.tag == "PickUpGrenade")
                     {
-                        GetComponent<GrenadeThrower>().IncrementNumGrenades();
-                        hit.transform.gameObject.SetActive(false);
+                        if (GetComponent<GrenadeThrower>().IncrementNumGrenades())
+                        {
+                            hit.transform.gameObject.SetActive(false);
+                        }
                     }
 
                     
