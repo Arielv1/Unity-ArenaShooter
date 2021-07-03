@@ -7,8 +7,8 @@ TagManager:
   - PickUpGun
   - Ground
   - PickUpGrenade
-  - PickUpGranade
   - CanvasAmmo
+  - PlayerWeapon
   layers:
   - Default
   - TransparentFX

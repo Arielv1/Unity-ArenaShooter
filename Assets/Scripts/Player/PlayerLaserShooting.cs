@@ -1,26 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
-using UnityEngine.UI;
-
-public class PlayerMachineGunShooting : MonoBehaviour
+public class PlayerLaserShooting : MonoBehaviour
 {
 
-    public float dealDamage = 10f;
-    public float range = 100f;
+    public float dealDamage = 75f;
+    public float range = 20f;
     public float hitRadius = 2f;
-    public float hitForce = 500f;
-    public GameObject rifle;
-    public Camera fpsCamera;
+    public float hitForce = 2500f;
+    public GameObject laserGun;
+    private Camera fpsCamera;
     public ParticleSystem muzzleFlash;
 
-    public int ammoLeft;
+    public static int LASER_MAX_AMMO = 3;
+    private int ammoLeft;
     public TMP_Text ammoText;
     void Start()
     {
-        ammoLeft = 30;
         fpsCamera = Camera.main;
-        
     }
     // Update is called once per frame
     void Update()
@@ -33,8 +33,7 @@ public class PlayerMachineGunShooting : MonoBehaviour
 
     void Shoot()
     {
-        
-        if (!rifle.activeSelf || ammoLeft <= 0)
+        if (!laserGun.activeSelf || ammoLeft <= 0)
         {
             return;
         }
@@ -45,7 +44,7 @@ public class PlayerMachineGunShooting : MonoBehaviour
         {
             if (hit.transform.tag != "Ally" && hit.transform.tag != "Enemy" && hit.transform.tag != "Ground")
             {
-                
+
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 if (rb)
                 {
@@ -53,6 +52,17 @@ public class PlayerMachineGunShooting : MonoBehaviour
                 }
             }
         }
+        UpdateAmmoTextCanvas();
+    }
+
+    public void SetAmmo(int amount)
+    {
+        ammoLeft = amount;
+        UpdateAmmoTextCanvas();
+    }
+
+    public void UpdateAmmoTextCanvas()
+    {
         ammoText.text = ammoLeft.ToString();
     }
 }
