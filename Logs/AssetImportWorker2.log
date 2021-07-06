@@ -1,0 +1,395 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.4f1 (becced5a802b) revision 12504301'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19041.1052; Version 2004; 64bit' Language: 'he' Physical Memory: 8034 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+F:\Unity\Unity Hub\2019.4.18f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+F:/Unity/Project/Unity-ArenaShooter
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+65186
+Successfully changed project path to: F:/Unity/Project/Unity-ArenaShooter
+F:/Unity/Project/Unity-ArenaShooter
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 54.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.4f1 (becced5a802b)
+[Subsystems] Discovering subsystems at path F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path F:/Unity/Project/Unity-ArenaShooter/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics 620 (ID=0x3ea0)
+    Vendor:   
+    VRAM:     4017 MB
+    Driver:   27.20.100.8935
+Initialize mono
+Mono path[0] = 'F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/Managed'
+Mono path[1] = 'F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56812
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: F:/Unity/Unity Hub/2019.4.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001780 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 56.42 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.232 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001607 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.56 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.259 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.37 seconds
+Refreshing native plugins compatible for Editor in 1.21 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1580 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.2 MB.
+System memory in use after: 81.3 MB.
+
+Unloading 69 unused Assets to reduce memory usage. Loaded Objects now: 2026.
+Total: 3.451000 ms (FindLiveObjects: 0.328100 ms CreateObjectMapping: 0.060600 ms MarkObjects: 2.543400 ms  DeleteObjects: 0.517500 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Prefabs/NPC/Idle.fbx
+  artifactKey: Guid(f2cba96ce4d2244479b699561c7ea377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/Idle.fbx using Guid(f2cba96ce4d2244479b699561c7ea377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92081dc53a6e6f2eaf6326500db011a7') in 1.194745 seconds
+  Import took 1.254701 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.077397 seconds.
+  path: Assets/Prefabs/NPC/Idle.fbx
+  artifactKey: Guid(f2cba96ce4d2244479b699561c7ea377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/Idle.fbx using Guid(f2cba96ce4d2244479b699561c7ea377) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f81b86c9a50b6045a785203319b5374d') in 0.114652 seconds
+  Import took 0.259817 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 134.330895 seconds.
+  path: Assets/Prefabs/NPC/firing rifle.fbx
+  artifactKey: Guid(d3dd9f97a7a6d8d4a9ff0576c2aff0ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/firing rifle.fbx using Guid(d3dd9f97a7a6d8d4a9ff0576c2aff0ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bd673b30f74c3309017f6745f915014') in 0.016903 seconds
+  Import took 0.083640 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.450046 seconds.
+  path: Assets/Prefabs/NPC/hit reaction.fbx
+  artifactKey: Guid(0be5cb8821ab27d4188f6c12fec2bb0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/hit reaction.fbx using Guid(0be5cb8821ab27d4188f6c12fec2bb0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1159f403aeaf603147f32175a6e981b') in 0.015477 seconds
+  Import took 0.093272 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001777 seconds.
+  path: Assets/Prefabs/NPC/reloading.fbx
+  artifactKey: Guid(e59de6bec5addef4b8660154d814a845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/reloading.fbx using Guid(e59de6bec5addef4b8660154d814a845) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58decb7c224bb46fbdb04a262dad7105') in 0.018626 seconds
+  Import took 0.075177 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.824201 seconds.
+  path: Assets/Prefabs/NPC/rifle run.fbx
+  artifactKey: Guid(3a015727e310e114bb2fc2b0e4295623) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/rifle run.fbx using Guid(3a015727e310e114bb2fc2b0e4295623) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55c324976ffa63380e62c127a60160d9') in 0.012798 seconds
+  Import took 0.097795 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.468384 seconds.
+  path: Assets/Prefabs/NPC/swat.fbx
+  artifactKey: Guid(a9ef6606220a5cb428e181a858e627e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/swat.fbx using Guid(a9ef6606220a5cb428e181a858e627e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '105da2326970f074f13f2f6e676d6ed5') in 0.173966 seconds
+  Import took 0.270725 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.711065 seconds.
+  path: Assets/Prefabs/NPC/toss grenade.fbx
+  artifactKey: Guid(994a6cc6269d04c49b16d5e0622e6a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/toss grenade.fbx using Guid(994a6cc6269d04c49b16d5e0622e6a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adfd7c1213161d4a9260e0dbf1b6c4f9') in 0.016965 seconds
+  Import took 0.092693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.326722 seconds.
+  path: Assets/Prefabs/NPC/walking.fbx
+  artifactKey: Guid(5e2d3ab3f93168047ab205da250a6033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/walking.fbx using Guid(5e2d3ab3f93168047ab205da250a6033) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a66982a568840bc1da9f6d22094e6400') in 0.014478 seconds
+  Import took 0.103670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.093237 seconds.
+  path: Assets/Prefabs/NPC/strafe.fbx
+  artifactKey: Guid(32d05341e037abb4198a41c620c9f13a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/strafe.fbx using Guid(32d05341e037abb4198a41c620c9f13a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccbefb98001888f9b53ca1c5810f6023') in 0.015749 seconds
+  Import took 0.058018 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.367366 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(b64b3285c82912e45956e4b443b9f03a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(b64b3285c82912e45956e4b443b9f03a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9380de0ec362844d369ca60a47f5b4c1') in 0.020851 seconds
+  Import took 0.051628 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009574 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(b64b3285c82912e45956e4b443b9f03a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(b64b3285c82912e45956e4b443b9f03a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9380de0ec362844d369ca60a47f5b4c1') in 0.010117 seconds
+  Import took 0.014211 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.192042 seconds.
+  path: Assets/Prefabs/NPC/firing rifle.anim
+  artifactKey: Guid(b64b3285c82912e45956e4b443b9f03a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/firing rifle.anim using Guid(b64b3285c82912e45956e4b443b9f03a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caf3dba60aa1f41dad3fd9c1fecff913') in 0.009337 seconds
+  Import took 0.036085 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.854537 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(8f9c3e47902b0dd48a6c1c997b7786c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(8f9c3e47902b0dd48a6c1c997b7786c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4af41bd425ce170be09dcae0299454bc') in 0.012416 seconds
+  Import took 0.070176 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.045848 seconds.
+  path: Assets/Prefabs/NPC/hit reaction.anim
+  artifactKey: Guid(8f9c3e47902b0dd48a6c1c997b7786c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/hit reaction.anim using Guid(8f9c3e47902b0dd48a6c1c997b7786c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22b770607bd11a18a7995f0fc3e8e72a') in 0.011425 seconds
+  Import took 0.044844 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.261027 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(d05fb1f30c151024a897e9dba56c17e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(d05fb1f30c151024a897e9dba56c17e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c2495b251f8ad7e355076a4fdff3af8') in 0.021675 seconds
+  Import took 0.051636 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.231475 seconds.
+  path: Assets/Prefabs/NPC/reloading.anim
+  artifactKey: Guid(d05fb1f30c151024a897e9dba56c17e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/reloading.anim using Guid(d05fb1f30c151024a897e9dba56c17e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43df253ec7f8c0f9d7febf5c00812ff9') in 0.041819 seconds
+  Import took 0.083015 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.598540 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(c01fb3bd449880f4980b44ebee8cf122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(c01fb3bd449880f4980b44ebee8cf122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8d11c74b8e588996e599fe622f2b50e9') in 0.012758 seconds
+  Import took 0.069871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.978846 seconds.
+  path: Assets/Prefabs/NPC/rifle run.anim
+  artifactKey: Guid(c01fb3bd449880f4980b44ebee8cf122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/rifle run.anim using Guid(c01fb3bd449880f4980b44ebee8cf122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa1980e0491094f45e9146afbe6cfdb4') in 0.014958 seconds
+  Import took 0.080054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.284176 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(a8a3e919bcc3c6a4189612550f58ca1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(a8a3e919bcc3c6a4189612550f58ca1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7319473cc160eb382402b8a0e2c17565') in 0.012806 seconds
+  Import took 0.081406 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.592138 seconds.
+  path: Assets/Prefabs/NPC/strafe.anim
+  artifactKey: Guid(a8a3e919bcc3c6a4189612550f58ca1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/strafe.anim using Guid(a8a3e919bcc3c6a4189612550f58ca1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ba5a1532e2673c9be32530a3b2fd298') in 0.011442 seconds
+  Import took 0.043300 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.544922 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(b619c391cf18f9442b5dfa62607b6c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(b619c391cf18f9442b5dfa62607b6c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4898dda7a13013e868d341bfc739396b') in 0.025860 seconds
+  Import took 0.073980 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.471851 seconds.
+  path: Assets/Prefabs/NPC/toss grenade.anim
+  artifactKey: Guid(b619c391cf18f9442b5dfa62607b6c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/toss grenade.anim using Guid(b619c391cf18f9442b5dfa62607b6c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be5582cab885995f97e394cbabce5ec1') in 0.025488 seconds
+  Import took 0.077695 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.014946 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(0814d6024bd36ad4c9734a3016286d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(0814d6024bd36ad4c9734a3016286d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08097a8ad2d94c8e0f7bb77177ecc471') in 0.013945 seconds
+  Import took 0.116583 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.682653 seconds.
+  path: Assets/Prefabs/NPC/walking.anim
+  artifactKey: Guid(0814d6024bd36ad4c9734a3016286d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/walking.anim using Guid(0814d6024bd36ad4c9734a3016286d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '729acc8c5a7a8bcc2999efde58e341fc') in 0.013315 seconds
+  Import took 0.096094 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.908717 seconds.
+  path: Assets/Prefabs/NPC/Animations/walkingWithGun.anim
+  artifactKey: Guid(0814d6024bd36ad4c9734a3016286d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/Animations/walkingWithGun.anim using Guid(0814d6024bd36ad4c9734a3016286d2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83129abdb76f509978db67c38df4821b') in 0.011062 seconds
+  Import took 0.032865 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 227.936164 seconds.
+  path: Assets/Prefabs/NPC/Crouched Walking.fbx
+  artifactKey: Guid(f968de0d227d6084a9bb7027ba05343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/Crouched Walking.fbx using Guid(f968de0d227d6084a9bb7027ba05343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6dba747e306a7acd2357a2a9e5e3db4') in 0.125699 seconds
+  Import took 0.186889 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001123 seconds.
+  path: Assets/Prefabs/NPC/Rifle Death.fbx
+  artifactKey: Guid(da231c34d9f0757478e823b6b32e22e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/Rifle Death.fbx using Guid(da231c34d9f0757478e823b6b32e22e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6abf10615a3e1215866128d2ac63c35e') in 0.136262 seconds
+  Import took 0.223702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001091 seconds.
+  path: Assets/Prefabs/NPC/Crouched Walking.fbx
+  artifactKey: Guid(f968de0d227d6084a9bb7027ba05343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/Crouched Walking.fbx using Guid(f968de0d227d6084a9bb7027ba05343c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6dba747e306a7acd2357a2a9e5e3db4') in 0.172656 seconds
+  Import took 0.183780 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 24.738865 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(7f6dda1ab1b68814e8429855bff12804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(7f6dda1ab1b68814e8429855bff12804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '229d0c526a72b17561f59376abdc8d55') in 0.193100 seconds
+  Import took 0.200645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.013181 seconds.
+  path: Assets/Prefabs/NPC/Crouched Walking.anim
+  artifactKey: Guid(7f6dda1ab1b68814e8429855bff12804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/Crouched Walking.anim using Guid(7f6dda1ab1b68814e8429855bff12804) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adc972374671fc958a42efa7b43fa4e7') in 0.069269 seconds
+  Import took 0.100363 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.809918 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(ca85d6fbea3aa79439464aa321806940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(ca85d6fbea3aa79439464aa321806940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b61122f858b8f4dfbfecd83c0386cbc6') in 0.038924 seconds
+  Import took 0.097403 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.752847 seconds.
+  path: Assets/Prefabs/NPC/Rifle Death.anim
+  artifactKey: Guid(ca85d6fbea3aa79439464aa321806940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/Rifle Death.anim using Guid(ca85d6fbea3aa79439464aa321806940) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f7417eba6b4134d5ee4bbe242a132a2') in 0.039139 seconds
+  Import took 0.069513 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 28.739969 seconds.
+  path: Assets/Prefabs/NPC/Animations/SoldierCtr.controller
+  artifactKey: Guid(4da2d0dadb21aa140984dd1a3a7165a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/Animations/SoldierCtr.controller using Guid(4da2d0dadb21aa140984dd1a3a7165a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da7e7e1e9aed7e9087b302e578ace6e3') in 0.012833 seconds
+  Import took 0.428369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.228594 seconds.
+  path: Assets/Prefabs/NPC/mixamo.com.anim
+  artifactKey: Guid(6e225461e45903048af6e105563bb7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/mixamo.com.anim using Guid(6e225461e45903048af6e105563bb7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c74ad7bcb2c1990e2d999f46cf8a345b') in 0.015398 seconds
+  Import took 0.102142 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.380490 seconds.
+  path: Assets/Prefabs/NPC/idle.anim
+  artifactKey: Guid(6e225461e45903048af6e105563bb7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/NPC/idle.anim using Guid(6e225461e45903048af6e105563bb7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7beb45ed8b7fe5de14ec7dfb2ce21ad3') in 0.030655 seconds
+  Import took 0.079634 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002109 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.55 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.5.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.361 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1529 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 95.2 MB.
+System memory in use after: 95.3 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2072.
+Total: 2.753000 ms (FindLiveObjects: 0.220600 ms CreateObjectMapping: 0.061500 ms MarkObjects: 2.452100 ms  DeleteObjects: 0.017800 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
