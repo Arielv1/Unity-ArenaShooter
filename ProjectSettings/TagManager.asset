@@ -10,6 +10,8 @@ TagManager:
   - CanvasAmmo
   - PlayerWeapon
   - GrenadeIcon
+  - PickUpGranade
+  - Enemy
   layers:
   - Default
   - TransparentFX
