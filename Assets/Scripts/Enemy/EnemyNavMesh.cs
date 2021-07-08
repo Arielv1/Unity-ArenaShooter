@@ -5,15 +5,43 @@ using UnityEngine.AI;
 
 public class EnemyNavMesh : MonoBehaviour
 {
-    [SerializeField] private Transform movePositionTransform;
-    private NavMeshAgent navMeshAgent;
-    private void Awake()
+    public float lookRadius = 10f;
+
+    Transform target;
+    private NavMeshAgent agent;
+
+    private void Start()
     {
-        navMeshAgent = GetComponent<NavMeshAgent>();
+        target = PlayerManager.instance.player.transform;
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
-        navMeshAgent.destination = movePositionTransform.position;
+        float distance = Vector3.Distance(target.position, transform.position);
+
+        if (distance <= lookRadius)
+        {
+            agent.SetDestination(target.position);
+
+            if (distance <= agent.stoppingDistance)
+            {
+                // Attack the target
+                // Face the target
+            }
+        }
+    }
+
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
+    void OnDrawGizmoSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 }

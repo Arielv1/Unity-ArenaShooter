@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
 
-    public HealthBar healthbar;  
+    public HealthBar healthbar;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
@@ -29,5 +29,19 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= damage;
         healthbar.SetHealth(currentHealth);
+        Debug.Log(transform.name + " takes " + damage + " damage.");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
+
+    public virtual void Die()
+    {
+        // Die in some way
+        // This method is meant to be overwritten
+        Debug.Log(transform.name + " Died.");
+    }
+
 }
