@@ -76,7 +76,6 @@ public class PlayerLaserShooting : MonoBehaviour
         lr.SetPosition(0, muzzlePoint.transform.position);
         lr.SetPosition(1, target.position);
         lr.enabled = true;
-        Debug.Log(target.position);
         // audioSource.Play();
         muzzleFlash.Play();
 
