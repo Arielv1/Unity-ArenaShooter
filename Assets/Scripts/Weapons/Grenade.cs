@@ -10,14 +10,17 @@ public class Grenade : MonoBehaviour
     public float force = 700f;
 
     public GameObject exposionEffect;
-    float countdown;
-    bool hasExploded = false;
-    
+    private float countdown;
+    private bool hasExploded = false;
 
+    private AudioSource grenadeExplosionSFX;
+    private SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
     {
         countdown = delay;
+        grenadeExplosionSFX = GetComponent<AudioSource>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -26,30 +29,34 @@ public class Grenade : MonoBehaviour
         countdown -= Time.deltaTime;
         if(countdown <= 0f && !hasExploded)
         {
-            Explode();
+            StartCoroutine(Explode());
             hasExploded = true;
         }
     }
 
-    void Explode()
+    IEnumerator Explode()
     {
+        grenadeExplosionSFX.Play();
         // Show effect
         Instantiate(exposionEffect, transform.position, transform.rotation);
          // Get nearby objects
-         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
-         foreach(Collider nearbyObject in colliders)
-         {
+        foreach(Collider nearbyObject in colliders)
+        {
              // Add force
-             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-             if(rb != null)
-             {
-                 rb.AddExplosionForce(force, transform.position, radius);
-             }
+            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
+            if(rb != null)
+            {
+                rb.AddExplosionForce(force, transform.position, radius);
+            }
 
              // Damage
-         }
+        }
+
+        sr.color = new Color(0f, 0f, 0f, 0f);
         // Remove grenade
+        yield return new WaitForSeconds(4f);
         Destroy(gameObject);
     }
 
