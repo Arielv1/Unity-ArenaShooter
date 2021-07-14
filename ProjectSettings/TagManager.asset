@@ -12,6 +12,8 @@ TagManager:
   - GrenadeIcon
   - PickUpGranade
   - Enemy
+  - Enemy Commander
+  - Allies
   layers:
   - Default
   - TransparentFX
