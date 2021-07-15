@@ -14,7 +14,8 @@ public class PlayerStats : CharacterStats
     {
         // end game
         Debug.Log("override called: "+transform.name + " Died.");
-        Application.Quit();
+        FindObjectOfType<GameController>().GameOver();
+
     }
 
 }
