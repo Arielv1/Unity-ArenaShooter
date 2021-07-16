@@ -96,14 +96,14 @@ public class Ally_Supporter : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(ray,out hit,range))
         {
-            // Debug.Log(" WeaponInRange we hit somthing: " + hit);
+            // Debug.Log(" WeaponInRange - hit something: " + hit);
             if (hit.transform.gameObject.tag == "PickUpGun" || hit.transform.gameObject.tag == "PickUpGrenade")
             {
-                Debug.Log(" WeaponInRange we hit weapon: " + hit);
+                Debug.Log(" WeaponInRange - found a " + hit);
                 return hit.transform.gameObject;
                 // if (hit.transform.gameObject.tag == "PickUpGun")
                 //     {
-                //         Debug.Log(" WeaponInRange we hit a weapon: " + hit);
+                //         Debug.Log(" WeaponInRange - found a " + hit);
                 //         return hit.transform.gameObject;
                 //     }
             }
@@ -115,7 +115,7 @@ public class Ally_Supporter : MonoBehaviour
     {
         Debug.Log("PickUpWeapon called with weapon: " + weapon);
         hasWeapon = true;
-        // Disable pickupweapon
+        // Disable pickupWeapon
         // Enable Ally_handheldWeapon
     }
 }

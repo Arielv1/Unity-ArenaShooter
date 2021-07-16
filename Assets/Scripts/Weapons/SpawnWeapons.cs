@@ -12,9 +12,13 @@ public class SpawnWeapons : MonoBehaviour
     public Vector3[] positions = new Vector3[] { 
         //new Vector3(10f,0.7f,-7f),
         //new Vector3(10.75f,0.7f,-16.5f),
-        //new Vector3(30f,0.7f,-17f)
-        //new Vector3(46.5f,0.7f,-23f)
-        //new Vector3(44f,0.7f,13f)
+        //new Vector3(30f,0.7f,-17f),
+        //new Vector3(46.5f,0.7f,-23f),
+        //new Vector3(44f,0.7f,13f),
+        //new Vector3(25.5f,0.7f,10f),
+        //new Vector3(24f,0.7f,-12.5f),
+        //new Vector3(24f,3.5f,-8f),
+        //new Vector3(16.5f,0.7f,-17f)
 
     };
     void Start()
