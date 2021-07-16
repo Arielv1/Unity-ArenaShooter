@@ -19,6 +19,8 @@ public class EnemySupporter : MonoBehaviour
     public float hitRange = 4f;
 
 
+    public Animator animator;
+
     void Start()
     {
         //  theCommander = GameObject.FindGameObjectWithTag("Enemy Commander");
@@ -26,6 +28,7 @@ public class EnemySupporter : MonoBehaviour
         theCommander = GameObject.FindWithTag("Enemy Commander");
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = theCommander.transform.position;
+        animator.SetBool("isWalking", true);
         enemies = GameObject.FindGameObjectsWithTag("Allies");
     }
 
@@ -82,6 +85,7 @@ public class EnemySupporter : MonoBehaviour
         transform.LookAt(enemy.transform.position);
         // check if has weapon
         CharacterStats sn = enemy.GetComponent<CharacterStats>();
+        animator.SetBool("isShooting", true);
         sn.TakeDamage(50);
         // enemy.TakeDamage(50);
     }
@@ -120,5 +124,9 @@ public class EnemySupporter : MonoBehaviour
     {
         Debug.Log("PickUpWeapon called with weapon: " + weapon);
         hasWeapon = true;
+        // Disable pickupWeapon
+        weapon.SetActive(false);
+        // Enable Ally_handheldWeapon
+        animator.SetBool("hasGun", true);
     }
 }

@@ -12,6 +12,8 @@ public class EnemyCommander : MonoBehaviour
     Vector3 target;
     bool validPath;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +52,7 @@ public class EnemyCommander : MonoBehaviour
         yield return new WaitForSeconds(timeForNewPath);
         GetNewPath();
         validPath = agent.CalculatePath(target,path);
-        while(!validPath)
+        while (!validPath)
         {
             yield return new WaitForSeconds(0.01f);
             GetNewPath();
@@ -61,6 +63,7 @@ public class EnemyCommander : MonoBehaviour
     void GetNewPath()
     {
         target = getNewRandomPosition();
+        animator.SetBool("isWalking", true);
         agent.SetDestination(target);
     }
 }

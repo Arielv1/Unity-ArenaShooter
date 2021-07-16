@@ -19,6 +19,7 @@ public class Ally_Supporter : MonoBehaviour
     public float minDistance = 10;
     public float pickUpRange = 10f;
 
+    public Animator animator;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Ally_Supporter : MonoBehaviour
         theCommander = PlayerManager.instance.player;
         agent = GetComponent<NavMeshAgent>();
         agent.destination = theCommander.transform.position;
+        animator.SetBool("isWalking", true);
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
@@ -116,6 +118,9 @@ public class Ally_Supporter : MonoBehaviour
         Debug.Log("PickUpWeapon called with weapon: " + weapon);
         hasWeapon = true;
         // Disable pickupWeapon
+        weapon.SetActive(false);
         // Enable Ally_handheldWeapon
+        animator.SetBool("hasGun", true);
+
     }
 }
