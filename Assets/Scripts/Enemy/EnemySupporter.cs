@@ -95,14 +95,14 @@ public class EnemySupporter : MonoBehaviour
     // }
     public GameObject WeaponInRange(float range)
     {
-        Debug.Log(" WeaponInRange called with range: " + range);
+        // Debug.Log(" WeaponInRange called with range: " + range);
         var ray = new Ray(this.transform.position,this.transform.forward);
         RaycastHit hit;
         if(Physics.Raycast(ray,out hit,range))
         {
-            Debug.Log(" WeaponInRange we hit somthing: " + hit);
             if (hit.transform.gameObject.tag == "PickUpGun" || hit.transform.gameObject.tag == "PickUpGrenade")
             {
+                Debug.Log(" WeaponInRange we hit somthing: " + hit);
                 return hit.transform.gameObject;
                 // if (hit.transform.gameObject.tag == "PickUpGun")
                 //     {
