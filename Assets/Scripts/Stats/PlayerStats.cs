@@ -10,6 +10,17 @@ public class PlayerStats : CharacterStats
     {
         
     }
+    public override void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthbar.SetHealth(currentHealth);
+        Debug.Log(transform.name + " takes " + damage + " damage.");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
     public override void Die()
     {
         // end game

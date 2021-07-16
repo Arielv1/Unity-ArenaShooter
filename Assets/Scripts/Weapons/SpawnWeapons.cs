@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SpawnWeapons : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class SpawnWeapons : MonoBehaviour
     public GameObject GrenadePrefab;
     // public Vector3[] positions;
     public Vector3[] positions = new Vector3[] { 
-        new Vector3(10f,0.7f,-7f),
-        new Vector3(24f,3.2f,-7f),
-        new Vector3(14.3f,0.3f,12f)
-        // new Vector3(14.326f,0.32f,12.08f)
+        //new Vector3(10f,0.7f,-7f),
+        //new Vector3(10.75f,0.7f,-16.5f),
+        //new Vector3(30f,0.7f,-17f)
+        //new Vector3(46.5f,0.7f,-23f)
+        //new Vector3(44f,0.7f,13f)
 
     };
     void Start()
@@ -23,6 +25,9 @@ public class SpawnWeapons : MonoBehaviour
             SpawnWeapon(positions[random],RiflePrefab);
             SpawnWeapon(positions[random],GrenadePrefab);
 
+            var numbersList = positions.ToList();
+            numbersList.Remove(positions[random]);
+            positions = numbersList.ToArray();
             // SpawnRifle(positions[random])
         }
     }
