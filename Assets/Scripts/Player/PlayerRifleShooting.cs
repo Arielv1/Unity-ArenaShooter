@@ -46,7 +46,6 @@ public class PlayerRifleShooting : MonoBehaviour
         {
             if (hit.transform.tag != "Ally" && hit.transform.tag != "Enemy" && hit.transform.tag != "Ground")
             {
-
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 if (rb)
                 {

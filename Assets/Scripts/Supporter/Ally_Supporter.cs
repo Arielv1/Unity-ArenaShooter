@@ -17,7 +17,7 @@ public class Ally_Supporter : MonoBehaviour
     private GameObject[] enemies;
     public bool hasWeapon = false;
     public float minDistance = 10;
-    public float hitRange = 4f;
+    public float pickUpRange = 10f;
 
 
     void Start()
@@ -46,7 +46,7 @@ public class Ally_Supporter : MonoBehaviour
         }
         else
         {
-            GameObject weapon = WeaponInRange(hitRange);
+            GameObject weapon = WeaponInRange(pickUpRange);
             if(weapon)
             {
                 PickUpWeapon(weapon);
@@ -115,5 +115,7 @@ public class Ally_Supporter : MonoBehaviour
     {
         Debug.Log("PickUpWeapon called with weapon: " + weapon);
         hasWeapon = true;
+        // Disable pickupweapon
+        // Enable Ally_handheldWeapon
     }
 }

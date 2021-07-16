@@ -17,7 +17,6 @@ public class EnemyCommander : MonoBehaviour
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         path = new UnityEngine.AI.NavMeshPath();
-        ChangeDirection();
     }
 
     // Update is called once per frame
@@ -63,16 +62,5 @@ public class EnemyCommander : MonoBehaviour
     {
         target = getNewRandomPosition();
         agent.SetDestination(target);
-    }
-    private void ChangeDirection() 
-    {
-        Debug.Log("ChangeDirection  called");
-        float angle = Random.Range(0f, 360f);
-        Quaternion quat = Quaternion.AngleAxis(angle, Vector3.forward);
-        Vector3 newUp = quat * Vector3.up;
-        newUp.z = 0;
-        newUp.Normalize();
-        transform.up = newUp;
-        timeToChangeDirection = 3f;
     }
 }

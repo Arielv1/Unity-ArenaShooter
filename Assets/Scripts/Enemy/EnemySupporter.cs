@@ -85,6 +85,7 @@ public class EnemySupporter : MonoBehaviour
         sn.TakeDamage(50);
         // enemy.TakeDamage(50);
     }
+
     // public float getdistance(GameObject enemy)
     // {
     //     if(enemy == null) return minDistance + 1;
@@ -93,6 +94,7 @@ public class EnemySupporter : MonoBehaviour
     //     float distance = diff.sqrMagnitude;
     //     return distance;
     // }
+
     public GameObject WeaponInRange(float range)
     {
         // Debug.Log(" WeaponInRange called with range: " + range);
@@ -116,7 +118,7 @@ public class EnemySupporter : MonoBehaviour
     }
     private void PickUpWeapon(GameObject weapon)
     {
-         Debug.Log("PickUpWeapon called with weapon: " + weapon);
+        Debug.Log("PickUpWeapon called with weapon: " + weapon);
         hasWeapon = true;
     }
 }
