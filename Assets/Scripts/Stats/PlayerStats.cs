@@ -6,14 +6,10 @@ public class PlayerStats : CharacterStats
 {
     // public GameObject player;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     public override void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthbar.SetHealth(currentHealth);
+        healthbar.SetValue(currentHealth);
         Debug.Log(transform.name + " takes " + damage + " damage.");
 
         if (currentHealth <= 0)

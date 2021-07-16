@@ -9,6 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeedSprint = 20f;
     public float movementSpeedCrouch = 5f;
 
+    public SprintBar sprintBar;
+    private bool SprintRecoveryFlag;
+    private bool allowedToSprint = true;
+    public int MaxStamina = 1200;
+    private int currentStamina;
+
     private Rigidbody rigidBody;
     private Vector3 movementDirection;
 
@@ -27,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
         realSpeed = movementSpeedBase;
         yScaleBase = this.transform.localScale.y;
         yScaleCrouch = yScaleBase / 4;
+
+        currentStamina = MaxStamina;
+        sprintBar.SetMaxValue(MaxStamina);
+
         StartCoroutine(GiveCameraControl());
     }
 
@@ -89,14 +99,37 @@ public class PlayerMovement : MonoBehaviour
 
     void Sprint()
     {
-        // TODO - add sprint bar maybe ?
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && currentStamina > 0 && allowedToSprint)
         {
             realSpeed = movementSpeedSprint;
+
+            currentStamina -= 5;
+            sprintBar.SetValue(currentStamina);
+
+            if (currentStamina <= 0)
+            {
+                allowedToSprint = false;
+                SprintRecoveryFlag = true;
+                realSpeed = movementSpeedBase;
+            }
+
+            SprintRecoveryFlag = false;
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
+            SprintRecoveryFlag = true;
             realSpeed = movementSpeedBase;
+          
+        }
+
+        if (SprintRecoveryFlag && currentStamina < MaxStamina)
+        {
+            currentStamina += 2;
+            sprintBar.SetValue(currentStamina);
+            if (!allowedToSprint)
+            {
+                allowedToSprint = currentStamina >= MaxStamina;
+            }
         }
     }
 

@@ -33,13 +33,13 @@ public class SpawnWeapons : MonoBehaviour
     }
     public void SpawnRifle(Vector3 position)
     {
-        Debug.Log(" SpawnRifle called in spawnWeapons Script with position: " + position);
+        //Debug.Log(" SpawnRifle called in spawnWeapons Script with position: " + position);
         Instantiate(RiflePrefab,position,Quaternion.identity);
         // transform.position = position;
     }
     public void SpawnWeapon(Vector3 position,GameObject weapon)
     {
-        Debug.Log(" SpawnWeapon called in with position: " + position + " and weapon: " + weapon);
+        //Debug.Log(" SpawnWeapon called in with position: " + position + " and weapon: " + weapon);
         Instantiate(weapon,position,Quaternion.identity);
     }
 }

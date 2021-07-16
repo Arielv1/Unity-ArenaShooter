@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class HealthBar : SliderBar
+public class SprintBar : SliderBar
 {
 
     public override void SetMaxValue(int value)
@@ -15,6 +14,4 @@ public class HealthBar : SliderBar
     {
         base.SetValue(value);
     }
-
-
 }

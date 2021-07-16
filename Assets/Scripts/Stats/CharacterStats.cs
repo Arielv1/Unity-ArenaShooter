@@ -6,6 +6,7 @@ public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    private int currentStamina;
 
     public HealthBar healthbar;
 
@@ -13,7 +14,8 @@ public class CharacterStats : MonoBehaviour
     void Awake()
     {
         currentHealth = maxHealth;
-        healthbar.SetMaxHealth(maxHealth);
+        healthbar.SetMaxValue(maxHealth);
+
     }
 
     // Update is called once per frame
