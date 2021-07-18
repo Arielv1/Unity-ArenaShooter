@@ -5,40 +5,35 @@ public class GameController : MonoBehaviour
 {
 
     public GameOverScreen GameOverScreen;
+    public GameObject victoryUI;
+    
     bool gameHasEnded = false;
-    string winner;
 
     public void Victory()
     {
         Debug.Log("Match Won!");
+        victoryUI.SetActive(true);
     }
 
-    public void GameOver(string theWinner)
+    public void GameOver()
     {
-        // Debug.Log("GameOver called");
-        // maybe will do a message of win or lost of player
-        winner = theWinner;
         if (!gameHasEnded)
         {
             gameHasEnded = true;
             GameOverScreen.Setup();
         }
     }
-    public void checkGameOverForEnemies()
+    public void checkVictory()
     {
         Debug.Log("checkGameOverForEnemies called");
-        GameObject theEnemyCommander = GameObject.FindWithTag("Enemy Commander");
-        if(theEnemyCommander != null)
-        {
-            Debug.Log("theEnemyCommander is not null");
-            return;
-        }
+        
         GameObject Enemy = GameObject.FindWithTag("Enemy");
-        if(Enemy != null) 
+        GameObject theEnemyCommander = GameObject.FindWithTag("Enemy Commander");
+        if(theEnemyCommander == null && Enemy == null)
         {
-            Debug.Log("Enemy is not null");
-            return;
+            Victory();
         }
-        GameOver("Player");
+        // Debug.Log("There are still enemies in the game.");
+        return;
     }
 }

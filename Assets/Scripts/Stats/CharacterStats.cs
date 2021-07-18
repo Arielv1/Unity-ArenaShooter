@@ -15,7 +15,7 @@ public class CharacterStats : MonoBehaviour
     //     currentHealth = maxHealth;
     //     healthbar.SetMaxValue(maxHealth);
     // }
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,14 +25,12 @@ public class CharacterStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
+
     }
 
     public virtual void TakeDamage(int damage)
     {
+
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
 

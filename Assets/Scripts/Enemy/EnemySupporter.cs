@@ -26,6 +26,7 @@ public class EnemySupporter : NPC
         // check for weapon else check to pickup weapon
         if(hasWeapon)
         {
+            animator.SetBool("hasGun", true);
             GameObject closestEnemy = FindClosestEnemy();
             if(closestEnemy)
             {

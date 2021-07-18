@@ -10,13 +10,13 @@ public class NPC : MonoBehaviour
 
     public void attack(GameObject enemy)
     {
-        Debug.Log(transform.name + " attacked " + enemy.transform.name);
+        // Debug.Log(transform.name + " attacked " + enemy.transform.name);
         transform.LookAt(enemy.transform.position);
         // check if has weapon
         CharacterStats sn = enemy.GetComponent<CharacterStats>();
         animator.SetBool("isShooting", true);
-        sn.TakeDamage(50);
-        // enemy.TakeDamage(50);
+        sn.TakeDamage(5);
+        // enemy.TakeDamage(5);
     }
     public GameObject WeaponInRange(float range)
     {

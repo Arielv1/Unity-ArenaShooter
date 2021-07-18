@@ -5,18 +5,23 @@ using UnityEngine;
 
 public class EnemyStats : CharacterStats
 {
+    public Animator animator;
+
+
+    public override void TakeDamage(int damage)
+    {
+        animator.SetBool("gotHit", true);
+        base.TakeDamage(damage);
+    }
+
     public override void Die()
     {
-        base.Die();
-
-        // Add ragdoll effect / death animation
+        animator.SetBool("isDead", true);
         Destroy(gameObject);
-        // FindObjectOfType<GameController>().checkGameOverForEnemies();
     }
 
     void OnDestroy()
     {
-        FindObjectOfType<GameController>().checkGameOverForEnemies();
-    }
-    
+        FindObjectOfType<GameController>().checkVictory();
+    }  
 }
