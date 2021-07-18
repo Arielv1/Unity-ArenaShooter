@@ -7,7 +7,7 @@ using System;
 public class PlayerLaserShooting : MonoBehaviour
 {
 
-    public float dealDamage = 75f;
+    public int dealDamage = 75;
     public float range = 20f;
     public float hitRadius = 2f;
     public float hitForce = 2500f;
@@ -47,7 +47,7 @@ public class PlayerLaserShooting : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
         {
-            if (hit.transform.tag != "Ally" && hit.transform.tag != "Enemy" && hit.transform.tag != "Ground")
+            if (hit.transform.tag != "Allies" && hit.transform.tag != "Enemy" && hit.transform.tag != "Ground" && hit.transform.tag != "Enemy Commander")
             {
 
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
@@ -55,6 +55,10 @@ public class PlayerLaserShooting : MonoBehaviour
                 {
                     rb.AddForce(-hit.normal * hitForce);
                 }
+            }
+            else
+            {
+                hitEnemy(hit.transform.gameObject);
             }
             StartCoroutine(ShowLaserShot(hit.transform));
         }
@@ -84,5 +88,11 @@ public class PlayerLaserShooting : MonoBehaviour
 
         yield return new WaitForSeconds(0.15f);
         lr.enabled = false;
+    }
+        public void hitEnemy(GameObject enemy)
+    {
+        Debug.Log(transform.name + " attacked " + enemy.transform.name);
+        CharacterStats sn = enemy.GetComponent<CharacterStats>();
+        sn.TakeDamage(dealDamage);
     }
 }

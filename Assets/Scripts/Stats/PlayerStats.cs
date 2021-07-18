@@ -21,7 +21,7 @@ public class PlayerStats : CharacterStats
     {
         // end game
         Debug.Log("override called: "+transform.name + " Died.");
-        FindObjectOfType<GameController>().GameOver();
+        FindObjectOfType<GameController>().GameOver("Enemy");
 
     }
 

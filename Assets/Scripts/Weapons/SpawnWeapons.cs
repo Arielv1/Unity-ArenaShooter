@@ -19,6 +19,7 @@ public class SpawnWeapons : MonoBehaviour
         //new Vector3(24f,0.7f,-12.5f),
         //new Vector3(24f,3.5f,-8f),
         //new Vector3(16.5f,0.7f,-17f)
+        // new Vector3(90.039f,7.531f,19.201f),
 
     };
     void Start()

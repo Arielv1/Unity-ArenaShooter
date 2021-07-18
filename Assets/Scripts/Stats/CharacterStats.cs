@@ -10,14 +10,18 @@ public class CharacterStats : MonoBehaviour
 
     public HealthBar healthbar;
 
+    // void Awake()
+    // {
+    //     currentHealth = maxHealth;
+    //     healthbar.SetMaxValue(maxHealth);
+    // }
+    
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxValue(maxHealth);
-
     }
-
     // Update is called once per frame
     void Update()
     {
