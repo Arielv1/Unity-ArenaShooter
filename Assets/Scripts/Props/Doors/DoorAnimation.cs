@@ -34,7 +34,7 @@ public class DoorAnimation : MonoBehaviour
 
     private void HandleAnimation()
     {
-        Debug.Log(countInside);
+        //Debug.Log(countInside);
         // If atleast one person is inside collider and door isn't already open
         if (countInside != 0 && !isAlreadyOpen)
         {
