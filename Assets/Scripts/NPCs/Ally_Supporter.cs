@@ -6,21 +6,17 @@ using UnityEngine.AI;
 public class Ally_Supporter : NPC
 {
     // Start is called before the first frame update
-    public float distance= 5;
-    public GameObject theCommander; 
+    private GameObject theCommander; 
     private NavMeshAgent agent;
     private GameObject[] enemies;
-    public float minDistance = 10;
-    public float pickUpRange = 10f;
+    public float shootingRange = 20f;
+    public float pickUpRange = 1f;
 
 
     void Start()
     {
-        //  theCommander = GameObject.FindGameObjectWithTag("Enemy Commander");
         theCommander = PlayerManager.instance.player;
         agent = GetComponent<NavMeshAgent>();
-        agent.destination = theCommander.transform.position;
-        animator.SetBool("isWalking", true);
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
@@ -29,8 +25,9 @@ public class Ally_Supporter : NPC
         {
             transform.LookAt(theCommander.transform);
             agent.destination = theCommander.transform.position;
+            animator.SetBool("isWalking", true);
         }
-        // check for weapon else check to pickup weapon
+        // search for enemy / weapon
         if(hasWeapon)
         {
             GameObject closestEnemy = FindClosestEnemy();
@@ -51,25 +48,30 @@ public class Ally_Supporter : NPC
 
      public GameObject FindClosestEnemy()
     {
-        GameObject Enemy = GameObject.FindWithTag("Enemy");
-        GameObject theEnemyCommander = GameObject.FindWithTag("Enemy Commander");
-        GameObject closest = null;
-        float enemyDistance = getdistance(Enemy);
-        float enemyCommanderDistance = getdistance(theEnemyCommander);
-        if(enemyDistance < minDistance && enemyDistance < enemyCommanderDistance)
+        GameObject enemy = GameObject.FindWithTag("Enemy");
+        GameObject enemyCommander = GameObject.FindWithTag("Enemy Commander");
+
+        float enemyD = getdistance(enemy);
+        float enemyCommanderD = getdistance(enemyCommander);
+        float closestEnemyD = Mathf.Min(enemyD, enemyCommanderD);
+
+        if(closestEnemyD < shootingRange)
         {
-            return Enemy;
+            if (closestEnemyD == enemyD)
+            {
+                return enemy;
+            }
+            else
+            {
+                return enemyCommander;
+            }
         }
-        if(enemyCommanderDistance < minDistance && enemyCommanderDistance <= enemyDistance)
-        {
-            return theEnemyCommander;
-        }
-        return closest;
+        return null;
     }
     
     public float getdistance(GameObject enemy)
     {
-        if(enemy == null) return minDistance + 1;
+        if(enemy == null) return shootingRange + 1;
         Vector3 position = transform.position;
         Vector3 diff = enemy.transform.position - position;
         float distance = diff.sqrMagnitude;

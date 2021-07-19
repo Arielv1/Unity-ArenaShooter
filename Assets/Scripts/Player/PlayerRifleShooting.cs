@@ -47,10 +47,16 @@ public class PlayerRifleShooting : MonoBehaviour
             if (hit.transform.tag != "Allies" && hit.transform.tag != "Enemy" && hit.transform.tag != "Ground" && hit.transform.tag != "Enemy Commander")
             {
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
+                var hitBox = hit.collider.GetComponent<HitBox>();
                 if (rb)
                 {
                     rb.AddForce(-hit.normal * hitForce);
                 }
+                if (hitBox)
+                {
+                    hitBox.OnRaycastHit(this);
+                }
+
             }
             else
             {

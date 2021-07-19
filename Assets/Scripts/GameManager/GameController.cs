@@ -26,11 +26,12 @@ public class GameController : MonoBehaviour
     public void checkVictory()
     {
         Debug.Log("checkGameOverForEnemies called");
-        
+
         GameObject Enemy = GameObject.FindWithTag("Enemy");
         GameObject theEnemyCommander = GameObject.FindWithTag("Enemy Commander");
-        if(theEnemyCommander == null && Enemy == null)
+        if (theEnemyCommander == null && Enemy == null && !gameHasEnded)
         {
+            gameHasEnded = true;
             Victory();
         }
         // Debug.Log("There are still enemies in the game.");
