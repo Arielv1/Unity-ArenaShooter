@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class ActiveWeapon : MonoBehaviour
 {
+    public enum WeaponSlot
+    {
+        Primary = 0,
+        Secondary = 1
+    }
+    
     public Transform crossHairTarget;
-    public Transform weaponParent;
-    RaycastWeapon weapon;
+    public Transform[] weaponSlots;
+    RaycastWeapon[] equipped_weapons =  new RaycastWeapon[2];
+    int activeWeaponIndex;
+    bool isHolstered = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +27,20 @@ public class ActiveWeapon : MonoBehaviour
         }
     }
 
+    RaycastWeapon GetWeapon(int index)
+    {
+        if (index < 0 || index >= equipped_weapons.Length)
+        {
+            return null;
+        }
+        return equipped_weapons[index];
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (weapon)
+        var weapon = GetWeapon(activeWeaponIndex);
+        if (weapon && !isHolstered)
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -38,10 +57,22 @@ public class ActiveWeapon : MonoBehaviour
                 weapon.StopFiring();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SetActiveWeapon(WeaponSlot.Primary);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SetActiveWeapon(WeaponSlot.Secondary);
+        }
     }
 
     public void Equip(RaycastWeapon newWeapon)
     {
+        int weaponSlotIndex = (int)newWeapon.weaponSlot;
+        var weapon = GetWeapon(weaponSlotIndex);
         if (weapon)
         {
             Destroy(weapon.gameObject);
@@ -49,10 +80,52 @@ public class ActiveWeapon : MonoBehaviour
 
         weapon = newWeapon;
         weapon.raycastDestinationTarget = crossHairTarget;
-        weapon.transform.parent = weaponParent;
-        weapon.transform.localPosition = Vector3.zero;
-        weapon.transform.localRotation = Quaternion.identity;
+        weapon.transform.SetParent(weaponSlots[weaponSlotIndex], false);
+        equipped_weapons[weaponSlotIndex] = weapon;
 
+        SetActiveWeapon(newWeapon.weaponSlot);
+
+    }
+
+    void SetActiveWeapon(WeaponSlot weaponSlot)
+    {
+        int holserIndex = activeWeaponIndex;
+        int activateIndex = (int)weaponSlot;
+        if (holserIndex == activateIndex)
+        {
+            holserIndex = -1;
+        }
+        StartCoroutine(SwitchWeapon(holserIndex, activateIndex));
+    }
+
+    IEnumerator SwitchWeapon(int holsterindex, int activateIndex)
+    {
+        yield return StartCoroutine(HolsterWeapon(holsterindex));
+        yield return StartCoroutine(ActivateWeapon(activateIndex));
+        isHolstered = false;
+        activeWeaponIndex = activateIndex;
+
+    }
+
+    IEnumerator HolsterWeapon(int index)
+    {
+        isHolstered = true;
+        var weapon = GetWeapon(index);
+        if (weapon)
+        {
+            weapon.gameObject.SetActive(false);
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
+    IEnumerator ActivateWeapon(int index)
+    {
+        var weapon = GetWeapon(index);
+        if (weapon)
+        {
+            weapon.gameObject.SetActive(true);
+            yield return new WaitForSeconds(1.0f);
+        }
     }
 
 }

@@ -19115,10 +19115,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8fca1118417b64b96a958832df9c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSlot: 1
   isFiring: 0
-  fireRate: 25
+  fireRate: 1
   bulletSpeed: 1000
   bulletDrop: 300
+  maxBounces: 3
   muzzleFlash: {fileID: 7058639329139804357}
   hitEffect: {fileID: 6645091270289554400}
   tracerEffect: {fileID: 8471296612589845125, guid: dfedc6b5b9ac94c4dadece2b337f0e73,
