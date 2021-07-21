@@ -6,16 +6,18 @@ public class AiWeapons : MonoBehaviour
 {
     RaycastWeapon currentWeapon;
     Animator animator;
+    MeshSockets sockets;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        sockets = GetComponent<MeshSockets>();
     } 
 
-    public void EquipWeapon(RaycastWeapon weapon)
+    public void Equip(RaycastWeapon weapon)
     {
         currentWeapon = weapon;
-        currentWeapon.transform.SetParent(transform, false); 
+        sockets.Attach(weapon.transform, MeshSockets.SocketId.Spine); 
     }
 
     public void ActivateWeapon()
