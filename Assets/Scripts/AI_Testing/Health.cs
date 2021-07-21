@@ -31,20 +31,21 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, Vector3 direction)
     {
         currentHealth -= amount;
         healthBar.SetHealthBarPercentage(currentHealth / maxHealth);
         if (currentHealth <= 0.0f)
         {
-            Die();
+            Die(direction);
         }
 
         blinkTimer = blinkDuration;
     }
-    public void Die()
+    public void Die(Vector3 direction)
     {
         AiDeathState deathState = agent.stateMachine.GetState(AiStateId.Death) as AiDeathState;
+        deathState.direction = direction;
         agent.stateMachine.ChangeState(AiStateId.Death);
     }
     public void Update()

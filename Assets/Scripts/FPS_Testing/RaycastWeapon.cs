@@ -22,6 +22,11 @@ public class RaycastWeapon : MonoBehaviour
     public ParticleSystem muzzleFlash;
     public ParticleSystem hitEffect;
     public TrailRenderer tracerEffect;
+
+    public int ammoCount;
+    public int clipSize;
+    public float damage = 10;
+
     public Transform raycastOrigin;
     public Transform raycastDestinationTarget;
 
@@ -124,6 +129,12 @@ public class RaycastWeapon : MonoBehaviour
                 rb2d.AddForceAtPosition(ray.direction * 20, hitInfo.point, ForceMode.Impulse);
             }
 
+            var hitBox = hitInfo.collider.GetComponent<HitBox>();
+            if (hitBox)
+            {
+                hitBox.OnRaycastHit(this, ray.direction);
+            }
+
 
         }
         else
@@ -134,6 +145,12 @@ public class RaycastWeapon : MonoBehaviour
 
     private void FireBullet()
     {
+        if(ammoCount <= 0)
+        {
+            return;
+        }
+        ammoCount--;    
+
         muzzleFlash.Emit(1);
 
         Vector3 velocity = (raycastDestinationTarget.position - raycastOrigin.position).normalized * bulletSpeed;

@@ -5,13 +5,16 @@ using UnityEngine.AI;
 
 public class AiAgent : MonoBehaviour
 {   
-    public AiStateMachine stateMachine;
     public AiStateId initialState;
-    public NavMeshAgent navMeshAgent;
     public AiAgentConfig config;
-    public Ragdoll ragdoll;
-    public SkinnedMeshRenderer mesh;
-    public UIHealthBar ui;
+
+    [HideInInspector] public AiStateMachine stateMachine;
+    [HideInInspector] public NavMeshAgent navMeshAgent;
+    [HideInInspector] public Ragdoll ragdoll;
+    [HideInInspector] public SkinnedMeshRenderer mesh;
+    [HideInInspector] public UIHealthBar ui;
+    [HideInInspector] public Transform playerTransform;
+    [HideInInspector] public AiWeapons weapons;
 
 
     // Start is called before the first frame update
@@ -21,6 +24,9 @@ public class AiAgent : MonoBehaviour
         mesh = GetComponent<SkinnedMeshRenderer>();
         ui = GetComponent<UIHealthBar>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        weapons = GetComponent<AiWeapons>();
+        playerTransform = GameObject.FindGameObjectWithTag("Allies").transform;
+
         stateMachine = new AiStateMachine(this);
         stateMachine.RegisterState(new AiChasePlayerState());
         stateMachine.RegisterState(new AiDeathState());

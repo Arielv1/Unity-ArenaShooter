@@ -6,9 +6,9 @@ public class HitBox : MonoBehaviour
 {
     public Health health;
 
-    public void OnRaycastHit(PlayerRifleShooting weapon)
+    public void OnRaycastHit(RaycastWeapon weapon, Vector3 direction)
     {
-        health.TakeDamage(weapon.dealDamage);
+        health.TakeDamage(weapon.damage, direction);
     }
 
 

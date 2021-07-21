@@ -52,10 +52,6 @@ public class PlayerRifleShooting : MonoBehaviour
                 {
                     rb.AddForce(-hit.normal * hitForce);
                 }
-                if (hitBox)
-                {
-                    hitBox.OnRaycastHit(this);
-                }
 
             }
             else

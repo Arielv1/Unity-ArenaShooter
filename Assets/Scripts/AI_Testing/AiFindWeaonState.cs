@@ -6,9 +6,11 @@ public class AiFindWeaonState : AiState
 {
     public void Enter(AiAgent agent)
     {
-        GameObject pickup = FindClosestWeapon(agent);
+        //Debug.Log("Enter AiFindWeaonState");
+        WeaponPickup pickup = FindClosestWeapon(agent);
         agent.navMeshAgent.destination = pickup.transform.position;
         agent.navMeshAgent.speed = 5;
+        //Debug.Log("Done Entering AiFindWeaonState");
     }
 
     public void Exit(AiAgent agent)
@@ -23,14 +25,17 @@ public class AiFindWeaonState : AiState
 
     public void Update(AiAgent agent)
     {
+        if (agent.weapons.HasWeapon()) 
+        {
+            agent.weapons.ActivateWeapon();
+        }
 
     }
 
-    private GameObject FindClosestWeapon(AiAgent agent)
+    private WeaponPickup FindClosestWeapon(AiAgent agent)
     {
-        GameObject[] weapons = GameObject.FindGameObjectsWithTag("PickUpGun");
-        Debug.Log("Weapons: " + weapons.Length);
-        GameObject closestWeapon = null;
+        WeaponPickup[] weapons = Object.FindObjectsOfType<WeaponPickup>();
+        WeaponPickup closestWeapon = null;
         float closestDistance = float.MaxValue;
         foreach (var weapon in weapons)
         {
@@ -43,5 +48,4 @@ public class AiFindWeaonState : AiState
         }
         return closestWeapon;
     }
-
 }

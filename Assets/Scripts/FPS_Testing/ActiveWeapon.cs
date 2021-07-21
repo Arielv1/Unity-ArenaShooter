@@ -12,10 +12,13 @@ public class ActiveWeapon : MonoBehaviour
     
     public Transform crossHairTarget;
     public Transform[] weaponSlots;
+
+    public AmmoWidget ammoWidget;
+
     RaycastWeapon[] equipped_weapons =  new RaycastWeapon[2];
     int activeWeaponIndex;
     bool isHolstered = false;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,11 @@ public class ActiveWeapon : MonoBehaviour
         {
             Equip(ExistingWeapon);
         }
+    }
+
+    public RaycastWeapon GetActiveWeapon()
+    {
+        return GetWeapon(activeWeaponIndex);
     }
 
     RaycastWeapon GetWeapon(int index)
@@ -84,6 +92,8 @@ public class ActiveWeapon : MonoBehaviour
         equipped_weapons[weaponSlotIndex] = weapon;
 
         SetActiveWeapon(newWeapon.weaponSlot);
+
+        ammoWidget.Refresh(weapon.ammoCount);
 
     }
 

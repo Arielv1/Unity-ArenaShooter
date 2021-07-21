@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - GrenadeIcon
+  - CanvasAmmo
+  - PickUpGranade
+  - Allies
+  - PlayerWeapon
+  - PickUpGun
+  - PickUpGrenade
+  - Enemy
+  - Enemy Commander
   layers:
   - Default
   - TransparentFX
@@ -12,8 +21,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Pickup
+  - Character
   - Lighting
   - Ground
   - Postprocessing
