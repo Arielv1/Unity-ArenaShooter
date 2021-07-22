@@ -17,16 +17,36 @@ public class AiWeapons : MonoBehaviour
     public void Equip(RaycastWeapon weapon)
     {
         currentWeapon = weapon;
-        sockets.Attach(weapon.transform, MeshSockets.SocketId.Spine); 
+        //sockets.Attach(weapon.transform, MeshSockets.SocketId.Spine);
+        sockets.Attach(currentWeapon.transform, MeshSockets.SocketId.RightHand);
     }
 
     public void ActivateWeapon()
     {
         animator.SetBool("Equip", true);
     }
+
+    public void DropWeapon()
+    {
+        if (currentWeapon)
+        {
+            currentWeapon.transform.SetParent(null);
+            currentWeapon.gameObject.GetComponent<BoxCollider>().enabled = true;
+            currentWeapon.gameObject.AddComponent<Rigidbody>();
+            currentWeapon = null;
+        }
+    }
+
     public bool HasWeapon()
     {
         return currentWeapon != null;
     }
 
+    public void OnAnimationEvent(string eventName)
+    {
+        if (eventName == "equipWeapon")
+        {
+            sockets.Attach(currentWeapon.transform, MeshSockets.SocketId.RightHand);
+        }
+    }
 }

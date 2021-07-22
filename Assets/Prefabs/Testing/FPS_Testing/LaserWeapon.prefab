@@ -19078,6 +19078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7148644193111827648}
   - component: {fileID: 7148644193111827651}
+  - component: {fileID: 2002904830871029742}
   m_Layer: 0
   m_Name: LaserWeapon
   m_TagString: Untagged
@@ -19130,6 +19131,19 @@ MonoBehaviour:
   damage: 20
   raycastOrigin: {fileID: 7148644192245504719}
   raycastDestinationTarget: {fileID: 0}
+--- !u!65 &2002904830871029742
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148644193111827649}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.45, z: 1}
+  m_Center: {x: 0.03, y: 0.34, z: 0.83}
 --- !u!1001 &6293489728348863252
 PrefabInstance:
   m_ObjectHideFlags: 0
