@@ -13,13 +13,11 @@ public class Grenade : MonoBehaviour
     private float countdown;
     private bool hasExploded = false;
 
-    private AudioSource grenadeExplosionSFX;
     private SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
     {
         countdown = delay;
-        grenadeExplosionSFX = GetComponent<AudioSource>();
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -36,7 +34,7 @@ public class Grenade : MonoBehaviour
 
     IEnumerator Explode()
     {
-        grenadeExplosionSFX.Play();
+        AudioManager.Instance.Play("GrenadeExplosion");
         // Show effect
         Instantiate(exposionEffect, transform.position, transform.rotation);
          // Get nearby objects

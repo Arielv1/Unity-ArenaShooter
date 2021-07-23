@@ -18,11 +18,9 @@ public class PlayerRifleShooting : MonoBehaviour
     private int ammoLeft;
     public TMP_Text ammoText;
 
-    private AudioSource rifleSFX;
     void Start()
     {
         fpsCamera = Camera.main;
-        rifleSFX = rifle.GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -60,7 +58,7 @@ public class PlayerRifleShooting : MonoBehaviour
             }
         }
         UpdateAmmoTextCanvas();
-        rifleSFX.Play();
+        AudioManager.Instance.Play("Rifle");
     }
 
     public void SetAmmo(int amount)

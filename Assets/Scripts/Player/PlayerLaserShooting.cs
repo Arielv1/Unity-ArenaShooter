@@ -16,7 +16,6 @@ public class PlayerLaserShooting : MonoBehaviour
     private Camera fpsCamera;
     public ParticleSystem muzzleFlash;
     private LineRenderer lr;
-    private AudioSource laserSFX;
 
     public static int LASER_MAX_AMMO = 3;
     [SerializeField] private int ammoLeft;
@@ -25,7 +24,6 @@ public class PlayerLaserShooting : MonoBehaviour
     {
         fpsCamera = Camera.main;
         lr = laserGun.GetComponent<LineRenderer>();
-        laserSFX = laserGun.GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -63,7 +61,7 @@ public class PlayerLaserShooting : MonoBehaviour
             StartCoroutine(ShowLaserShot(hit.transform));
         }
         UpdateAmmoTextCanvas();
-        laserSFX.Play();
+        AudioManager.Instance.Play("Laser");
     }
 
     public void SetAmmo(int amount)
