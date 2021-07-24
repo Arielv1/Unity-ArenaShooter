@@ -7,7 +7,9 @@ public class PlayerStats : CharacterStats
     public override void Die()
     {
         // end game
-        Debug.Log("override called: "+transform.name + " Died.");
+        GetComponent<PlayerCameraController>().enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         FindObjectOfType<GameController>().GameOver();
     }
 
