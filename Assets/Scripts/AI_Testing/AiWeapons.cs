@@ -7,11 +7,13 @@ public class AiWeapons : MonoBehaviour
     RaycastWeapon currentWeapon;
     Animator animator;
     MeshSockets sockets;
-
+    WeaponIk weaponIk;
+    Transform currentTarget;
     private void Start()
     {
         animator = GetComponent<Animator>();
         sockets = GetComponent<MeshSockets>();
+        weaponIk = GetComponent<WeaponIk>();
     } 
 
     public void Equip(RaycastWeapon weapon)
@@ -23,7 +25,19 @@ public class AiWeapons : MonoBehaviour
 
     public void ActivateWeapon()
     {
+        StartCoroutine(EquipWeapon());
+    }
+
+    IEnumerator EquipWeapon()
+    {
         animator.SetBool("Equip", true);
+        yield return new WaitForSeconds(0.5f);
+        while(animator.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f)
+        {
+            yield return null;
+        }
+
+        weaponIk.SetAimTransform(currentWeapon.raycastOrigin);
     }
 
     public void DropWeapon()
@@ -49,4 +63,12 @@ public class AiWeapons : MonoBehaviour
             sockets.Attach(currentWeapon.transform, MeshSockets.SocketId.RightHand);
         }
     }
+
+    public void SetTarget(Transform target)
+    {
+        weaponIk.SetTargetTransform(target);
+        currentTarget = target;
+    }
+    
+
 }
