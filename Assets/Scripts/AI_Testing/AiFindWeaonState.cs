@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class AiFindWeaonState : AiState
 {
+    GameObject pickup;
+    
+
     public void Enter(AiAgent agent)
     {
-        WeaponPickup pickup = FindClosestWeapon(agent);
-        agent.navMeshAgent.destination = pickup.transform.position;
-        agent.navMeshAgent.speed = 5;
+        pickup = null;
+        agent.navMeshAgent.speed = agent.config.findWeaponSpeed;
     }
 
     public void Exit(AiAgent agent)
@@ -23,27 +25,50 @@ public class AiFindWeaonState : AiState
 
     public void Update(AiAgent agent)
     {
+        // Find Pickup
+        if (!pickup)
+        {
+            pickup = FindPickup(agent);
+            if (pickup)
+            { 
+                CollectPickup(agent, pickup);
+            }
+        }
+
+        // Wander
+        if (!agent.navMeshAgent.hasPath)
+        {
+            WorldBounds worldBounds = GameObject.FindObjectOfType<WorldBounds>();
+            Vector3 min = worldBounds.min.position;
+            Vector3 max = worldBounds.max.position;
+
+            Vector3 randomPosition = new Vector3(
+                Random.Range(min.x, max.x),
+                Random.Range(min.y, max.y),
+                Random.Range(min.z, max.z)
+                );
+            agent.navMeshAgent.destination = randomPosition;
+        }
+
+
         if (agent.weapons.HasWeapon()) 
         {
             agent.stateMachine.ChangeState(AiStateId.AttackPlayer);
         }
-
     }
 
-    private WeaponPickup FindClosestWeapon(AiAgent agent)
+    GameObject FindPickup(AiAgent agent)
     {
-        WeaponPickup[] weapons = Object.FindObjectsOfType<WeaponPickup>();
-        WeaponPickup closestWeapon = null;
-        float closestDistance = float.MaxValue;
-        foreach (var weapon in weapons)
+        if(agent.sensor.Objects.Count > 0)
         {
-            float distanceToWeapon = Vector3.Distance(agent.transform.position, weapon.transform.position);
-            if (distanceToWeapon < closestDistance)
-            {
-                closestDistance = distanceToWeapon;
-                closestWeapon = weapon;
-            }
+            return agent.sensor.Objects[0];
         }
-        return closestWeapon;
+        return null;
     }
+
+    void CollectPickup(AiAgent agent, GameObject pickup)
+    {
+        agent.navMeshAgent.destination = pickup.transform.position;
+    }
+
 }

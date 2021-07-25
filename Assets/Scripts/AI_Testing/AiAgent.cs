@@ -15,7 +15,7 @@ public class AiAgent : MonoBehaviour
     [HideInInspector] public UIHealthBar ui;
     [HideInInspector] public Transform playerTransform;
     [HideInInspector] public AiWeapons weapons;
-
+    [HideInInspector] public AiSensor sensor;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,7 @@ public class AiAgent : MonoBehaviour
         ui = GetComponent<UIHealthBar>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         weapons = GetComponent<AiWeapons>();
+        sensor = GetComponent<AiSensor>();
         playerTransform = GameObject.FindGameObjectWithTag("Allies").transform;
 
         stateMachine = new AiStateMachine(this);
