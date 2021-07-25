@@ -4,13 +4,36 @@ using UnityEngine;
 
 public class AiWeapons : MonoBehaviour
 {
-    RaycastWeapon currentWeapon;
+    public enum WeaponState
+    {
+        Holstered,
+        Active,
+        Reloading
+    }
+
+
+    public RaycastWeapon currentWeapon;
     Animator animator;
     MeshSockets sockets;
     WeaponIk weaponIk;
     Transform currentTarget;
-    bool weaponActive = false;
+    WeaponState weaponState = WeaponState.Holstered;
     public float inaccuracy = 0.0f;
+
+    public bool IsActive()
+    {
+        return weaponState == WeaponState.Active;
+    }
+
+    public bool IsHolstered()
+    {
+        return weaponState == WeaponState.Holstered;
+    }
+
+    public bool IsReloading()
+    {
+        return weaponState == WeaponState.Reloading;
+    }
 
     private void Awake()
     {
@@ -21,7 +44,7 @@ public class AiWeapons : MonoBehaviour
 
     private void Update()
     {
-        if (currentTarget && currentWeapon && weaponActive)
+        if (currentTarget && currentWeapon && IsActive())
         {
             Vector3 target = currentTarget.position + weaponIk.targetOffset;
             target += Random.insideUnitSphere * inaccuracy;
@@ -50,20 +73,41 @@ public class AiWeapons : MonoBehaviour
 
     public void ActivateWeapon()
     {
-        StartCoroutine(EquipWeapon());
+        StartCoroutine(EquipWeaponAnimation());
     }
 
-    IEnumerator EquipWeapon()
+    public void ReloadWeapon()
+    {
+        if(IsActive())
+            StartCoroutine(ReloadWeaponAnimation());
+    }
+
+    IEnumerator EquipWeaponAnimation()
     {
         animator.SetBool("Equip", true);
         yield return new WaitForSeconds(0.5f);
-        while(animator.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f)
+        while (animator.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f)
         {
             yield return null;
         }
 
         weaponIk.SetAimTransform(currentWeapon.raycastOrigin);
-        weaponActive = true;
+        weaponState = WeaponState.Active;
+    }
+
+    IEnumerator ReloadWeaponAnimation()
+    {
+        weaponState = WeaponState.Reloading;
+        animator.SetTrigger("reload_weapon");
+        weaponIk.enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        while (animator.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f)
+        {
+            yield return null;
+        }
+        RefillMagazine();
+        weaponIk.enabled = true;
+        weaponState = WeaponState.Active;
     }
 
     public void DropWeapon()
@@ -95,6 +139,12 @@ public class AiWeapons : MonoBehaviour
         weaponIk.SetTargetTransform(target);
         currentTarget = target;
     }
-    
 
+    void RefillMagazine()
+    {
+        //Debug.Log("Weapon is being refilled");
+        RaycastWeapon weapon = currentWeapon;
+        weapon.ammoCount = weapon.clipSize;
+        //Debug.Log("Weapon is ready");
+    }
 }
