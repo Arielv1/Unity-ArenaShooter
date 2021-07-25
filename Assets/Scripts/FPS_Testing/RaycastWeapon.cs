@@ -28,7 +28,7 @@ public class RaycastWeapon : MonoBehaviour
     public float damage = 10;
 
     public Transform raycastOrigin;
-    public Transform raycastDestinationTarget;
+    
 
 
     Ray ray;
@@ -58,18 +58,28 @@ public class RaycastWeapon : MonoBehaviour
     public void StartFiring()
     {
         isFiring = true;
-        accumulatedTime = 0.0f;
-        FireBullet();
-
+        if(accumulatedTime > 0.0f)
+            accumulatedTime = 0.0f;
     }
 
-    public void UpdateFiring(float deltaTime)
+    public void UpdateWeapon(float deltaTime, Vector3 target)
     {
+        if (isFiring)
+        {
+            UpdateFiring(deltaTime, target);
+        }
+
         accumulatedTime += deltaTime;
+
+        UpdateBullets(deltaTime);
+    }
+
+    public void UpdateFiring(float deltaTime, Vector3 target)
+    {
         float fireInterval = 1.0f / fireRate;
         while (accumulatedTime >= 0.0f)
         {
-            FireBullet();
+            FireBullet(target);
             accumulatedTime -= fireInterval;
         }
     }
@@ -143,8 +153,9 @@ public class RaycastWeapon : MonoBehaviour
         }
     }
 
-    private void FireBullet()
+    private void FireBullet(Vector3 target)
     {
+        //Debug.Log("ammoCount: " + ammoCount);
         if(ammoCount <= 0)
         {
             return;
@@ -153,7 +164,7 @@ public class RaycastWeapon : MonoBehaviour
 
         muzzleFlash.Emit(1);
 
-        Vector3 velocity = (raycastDestinationTarget.position - raycastOrigin.position).normalized * bulletSpeed;
+        Vector3 velocity = (target - raycastOrigin.position).normalized * bulletSpeed;
         var bullet = CreateBullet(raycastOrigin.position, velocity);
         bullets.Add(bullet);
     }

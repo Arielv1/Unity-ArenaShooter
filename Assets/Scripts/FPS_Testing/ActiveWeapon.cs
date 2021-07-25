@@ -47,23 +47,21 @@ public class ActiveWeapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool canFire = !isHolstered;
         var weapon = GetWeapon(activeWeaponIndex);
-        if (weapon && !isHolstered)
+        
+        if (weapon)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && canFire && !weapon.isFiring)
             {
                 weapon.StartFiring();
             }
-            if (weapon.isFiring)
-            {
-                weapon.UpdateFiring(Time.deltaTime);
-            }
-            weapon.UpdateBullets(Time.deltaTime);
 
-            if (Input.GetButtonUp("Fire1"))
+            if (Input.GetButtonUp("Fire1") || !canFire)
             {
                 weapon.StopFiring();
             }
+            weapon.UpdateWeapon(Time.deltaTime, crossHairTarget.position);
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -87,7 +85,6 @@ public class ActiveWeapon : MonoBehaviour
         }
 
         weapon = newWeapon;
-        weapon.raycastDestinationTarget = crossHairTarget;
         weapon.transform.SetParent(weaponSlots[weaponSlotIndex], false);
         equipped_weapons[weaponSlotIndex] = weapon;
 

@@ -9,12 +9,37 @@ public class AiWeapons : MonoBehaviour
     MeshSockets sockets;
     WeaponIk weaponIk;
     Transform currentTarget;
-    private void Start()
+    bool weaponActive = false;
+    public float inaccuracy = 0.0f;
+
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         sockets = GetComponent<MeshSockets>();
         weaponIk = GetComponent<WeaponIk>();
-    } 
+    }
+
+    private void Update()
+    {
+        if (currentTarget && currentWeapon && weaponActive)
+        {
+            Vector3 target = currentTarget.position + weaponIk.targetOffset;
+            target += Random.insideUnitSphere * inaccuracy;
+            currentWeapon.UpdateWeapon(Time.deltaTime, target);
+        }
+    }
+
+    public void SetFiring(bool enabled)
+    {
+        if (enabled)
+        {
+            currentWeapon.StartFiring();
+        }
+        else
+        {
+            currentWeapon.StopFiring();
+        }
+    }
 
     public void Equip(RaycastWeapon weapon)
     {
@@ -38,6 +63,7 @@ public class AiWeapons : MonoBehaviour
         }
 
         weaponIk.SetAimTransform(currentWeapon.raycastOrigin);
+        weaponActive = true;
     }
 
     public void DropWeapon()

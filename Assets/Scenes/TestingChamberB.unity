@@ -870,7 +870,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17666
+  m_Name: pb_Mesh17548
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3895,6 +3895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31bb2dbad225e0642825a7ce05a1bdfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inaccuracy: 0.4
 --- !u!135 &3420146887492484817
 SphereCollider:
   m_ObjectHideFlags: 0
