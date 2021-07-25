@@ -145,6 +145,12 @@ public class RaycastWeapon : MonoBehaviour
                 hitBox.OnRaycastHit(this, ray.direction);
             }
 
+            var playerHitBox = hitInfo.collider.GetComponent<PlayerHitBox>();
+            if (playerHitBox)
+            {
+                playerHitBox.OnRaycastHit(this, ray.direction);
+            }
+
 
         }
         else

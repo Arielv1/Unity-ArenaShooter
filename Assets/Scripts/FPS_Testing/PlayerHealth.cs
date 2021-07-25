@@ -17,21 +17,26 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float amount, Vector3 direction)
     {
         currentHealth -= amount;
-
-        if (currentHealth <= 0.0f)
+        Debug.Log("currentHealth = " + currentHealth);
+        if (IsDead())
         {
-            Die(direction);
+            Die();
         }
 
     }
-    public void Die(Vector3 direction)
+    public void Die()
     {
-
-
+        Debug.Log("The player is dead!");
     }
     public void Update()
     {
 
 
     }
+
+    public bool IsDead()
+    {
+        return currentHealth <= 0.0f;
+    }
+
 }

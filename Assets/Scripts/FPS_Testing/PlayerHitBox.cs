@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitBox : MonoBehaviour
+public class PlayerHitBox : MonoBehaviour
 {
-    public Health health;
+    public PlayerHealth health;
 
     public void OnRaycastHit(RaycastWeapon weapon, Vector3 direction)
     {

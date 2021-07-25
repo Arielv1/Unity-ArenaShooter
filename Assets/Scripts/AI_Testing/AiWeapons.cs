@@ -76,6 +76,13 @@ public class AiWeapons : MonoBehaviour
         StartCoroutine(EquipWeaponAnimation());
     }
 
+    public void DeactivateWeapon()
+    {
+        SetTarget(null);
+        SetFiring(false);
+        StartCoroutine(HolsterWeaponAnimation());
+    }
+
     public void ReloadWeapon()
     {
         if(IsActive())
@@ -93,6 +100,20 @@ public class AiWeapons : MonoBehaviour
 
         weaponIk.SetAimTransform(currentWeapon.raycastOrigin);
         weaponState = WeaponState.Active;
+    }
+
+    IEnumerator HolsterWeaponAnimation()
+    {
+        weaponState = WeaponState.Holstered;
+        animator.SetBool("Equip", false);
+        yield return new WaitForSeconds(0.5f);
+        while (animator.GetCurrentAnimatorStateInfo(1).normalizedTime < 1.0f)
+        {
+            yield return null;
+        }
+
+        weaponIk.SetAimTransform(currentWeapon.raycastOrigin);
+        
     }
 
     IEnumerator ReloadWeaponAnimation()

@@ -6,6 +6,7 @@ public enum AiStateId
 {
     ChasePlayer,
     Death,
+    Idle,
     FindWeapon,
     AttackPlayer
 }
