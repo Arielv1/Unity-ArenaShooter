@@ -870,7 +870,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17548
+  m_Name: pb_Mesh66160
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2368,6 +2368,7 @@ GameObject:
   - component: {fileID: 2106633134}
   - component: {fileID: 2106633137}
   - component: {fileID: 2106633138}
+  - component: {fileID: 2106633139}
   m_Layer: 7
   m_Name: Player
   m_TagString: Allies
@@ -2458,6 +2459,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeWeapon: {fileID: 2106633137}
   ammoWidget: {fileID: 1917752633}
+--- !u!114 &2106633139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106633133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637eb45e9e9fe144c995811b9e2d1944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
 --- !u!1 &2135904908
 GameObject:
   m_ObjectHideFlags: 0
@@ -3795,7 +3810,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bbc17683cd65d54ba7e65baabe764b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hips: {fileID: 3201844213010708098}
 --- !u!195 &3420146887492484812
 NavMeshAgent:
   m_ObjectHideFlags: 0
