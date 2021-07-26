@@ -8,6 +8,7 @@ public class AiAgent : MonoBehaviour
     public AiStateId initialState;
     public AiAgentConfig config;
 
+    public Transform commanderTransform = null;
     [HideInInspector] public AiStateMachine stateMachine;
     [HideInInspector] public NavMeshAgent navMeshAgent;
     [HideInInspector] public Ragdoll ragdoll;
@@ -32,7 +33,7 @@ public class AiAgent : MonoBehaviour
         stateMachine.RegisterState(new AiChasePlayerState());
         stateMachine.RegisterState(new AiDeathState());
         stateMachine.RegisterState(new AiIdleState());
-        stateMachine.RegisterState(new AiFindWeaonState());
+        stateMachine.RegisterState(new AiFindWeaponState());
         stateMachine.RegisterState(new AiAttackPlayerState());
         stateMachine.ChangeState(initialState);
     }

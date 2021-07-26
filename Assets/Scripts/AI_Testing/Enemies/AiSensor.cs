@@ -63,7 +63,7 @@ public class AiSensor : MonoBehaviour
         Vector3 origin = transform.position;
         Vector3 dest = obj.transform.position;
         Vector3 direction = dest - origin;
-        if(direction.y < 0 || direction.y > height)
+        if (direction.y < 0 || direction.y > height)
         {
             return false;
         }
@@ -113,6 +113,25 @@ public class AiSensor : MonoBehaviour
             Gizmos.DrawSphere(obj.transform.position, 0.2f);
         }
 
+    }
+
+    public int Filter(GameObject[] buffer, string layerName)
+    {
+        int layer = LayerMask.NameToLayer(layerName);
+        int count = 0;
+        foreach (var obj in Objects)
+        {
+            if (obj.layer == layer)
+            {
+                buffer[count++] = obj;
+            }
+
+            if (buffer.Length == count)
+            {
+                break; // buffer is full
+            }
+        }
+        return count;
     }
 
     Mesh CreateWedgeMesh()
