@@ -1930,7 +1930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &692609267310199141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,7 +2463,7 @@ PrefabInstance:
     - target: {fileID: 1405771344672919466, guid: 2299d4d7bbbd86d4680ee0cac7de1642,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.79
+      value: 17.38
       objectReference: {fileID: 0}
     - target: {fileID: 1405771344672919466, guid: 2299d4d7bbbd86d4680ee0cac7de1642,
         type: 3}
@@ -2473,7 +2473,7 @@ PrefabInstance:
     - target: {fileID: 1405771344672919466, guid: 2299d4d7bbbd86d4680ee0cac7de1642,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.08
+      value: -10.65
       objectReference: {fileID: 0}
     - target: {fileID: 1405771344672919466, guid: 2299d4d7bbbd86d4680ee0cac7de1642,
         type: 3}
@@ -2515,9 +2515,24 @@ PrefabInstance:
       propertyPath: ammoWidget
       value: 
       objectReference: {fileID: 1917752633}
+    - target: {fileID: 1405771344672919476, guid: 2299d4d7bbbd86d4680ee0cac7de1642,
+        type: 3}
+      propertyPath: supporter
+      value: 
+      objectReference: {fileID: 692609267310199139}
+    - target: {fileID: 1405771344672919476, guid: 2299d4d7bbbd86d4680ee0cac7de1642,
+        type: 3}
+      propertyPath: supporterTransform
+      value: 
+      objectReference: {fileID: 204760783838206942}
     - target: {fileID: 1405771344672919479, guid: 2299d4d7bbbd86d4680ee0cac7de1642,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405771344672919479, guid: 2299d4d7bbbd86d4680ee0cac7de1642,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3750,6 +3765,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2017126423294723153, guid: 6650b6a563ba1c248b5819d95126d794,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017126423294723153, guid: 6650b6a563ba1c248b5819d95126d794,
+        type: 3}
       propertyPath: m_TagString
       value: Enemy Commander
       objectReference: {fileID: 0}
@@ -4709,6 +4729,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: WeaponPickup_LaserGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6651078960627431432, guid: 97af8c0ada4e10c43bf78771240ddb1a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6651078960627431443, guid: 97af8c0ada4e10c43bf78771240ddb1a,
         type: 3}
@@ -5791,6 +5816,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AI_Supporter
+      objectReference: {fileID: 0}
+    - target: {fileID: 692609268634601214, guid: 029bddf619e277c4f8e450247c6a481c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 692609268634601214, guid: 029bddf619e277c4f8e450247c6a481c,
         type: 3}

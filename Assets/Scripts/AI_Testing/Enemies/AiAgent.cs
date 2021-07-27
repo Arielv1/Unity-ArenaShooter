@@ -32,7 +32,7 @@ public class AiAgent : MonoBehaviour
         if (gameObject.name == "Ally_Supporter")
             targetTransform = GameObject.FindGameObjectWithTag("Enemy Commander").transform;
         else
-            targetTransform = GameObject.FindGameObjectWithTag("Allies").transform;
+            targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
         stateMachine = new AiStateMachine(this);
         stateMachine.RegisterState(new AiChasePlayerState());

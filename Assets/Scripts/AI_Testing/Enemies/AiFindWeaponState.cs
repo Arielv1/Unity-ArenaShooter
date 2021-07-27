@@ -25,7 +25,7 @@ public class AiFindWeaponState : AiState
 
     public void Update(AiAgent agent)
     {
-        if (agent.gameObject.name == "AI_Supporter")
+        if (agent.gameObject.name == "AI_Supporter" || agent.gameObject.name == "Ally_Supporter")
         {
             agent.navMeshAgent.stoppingDistance = agent.config.followDistance;
             agent.navMeshAgent.SetDestination(agent.commanderTransform.position);
@@ -34,10 +34,6 @@ public class AiFindWeaponState : AiState
         // Find Pickup
         if (!pickup)
         {
-            if (agent.gameObject.name == "AI_Supporter")
-            {
-                Debug.Log("supporter gets here.");
-            }
             pickup = FindPickup(agent);
             if (pickup)
             { 
@@ -81,8 +77,9 @@ public class AiFindWeaponState : AiState
 
     void FindTarget(AiAgent agent)
     {
+        Debug.Log("Ai: " + agent.gameObject.name + " | FindTarget");
         int count = agent.sensor.Filter(objects, "Character");
-        if (count > 0 && agent.targetTransform.gameObject.name  == "Player")
+        if (count > 0)
         {
             agent.stateMachine.ChangeState(AiStateId.AttackPlayer);
         }

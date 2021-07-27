@@ -38,9 +38,16 @@ public class AiAttackPlayerState : AiState
         ReloadWeapon(agent);
         UpdateFiring(agent);
 
-        if (agent.targetTransform.GetComponent<PlayerHealth>().IsDead())
+        if (agent.targetTransform.gameObject.name == "Player")
         {
-            agent.stateMachine.ChangeState(AiStateId.Idle);
+            if (agent.targetTransform.GetComponent<PlayerHealth>().IsDead())
+            {
+                agent.stateMachine.ChangeState(AiStateId.Idle);
+            }
+        }
+        else
+        {
+            agent.navMeshAgent.destination = agent.commanderTransform.position;
         }
     }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AiAgent supporter = null;
+
     [SerializeField] public Transform playerCamera = null;
 
     [SerializeField] public float mouseSensitivity = 3.5f;
