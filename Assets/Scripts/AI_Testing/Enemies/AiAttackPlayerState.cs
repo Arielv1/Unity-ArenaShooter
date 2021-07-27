@@ -16,7 +16,7 @@ public class AiAttackPlayerState : AiState
         }
         else
         {
-            stoppingDistance = agent.config.supporterAttackDistance;
+            stoppingDistance = agent.config.followDistance;
         }
         agent.navMeshAgent.stoppingDistance = stoppingDistance;
         //agent.weapons.SetFiring(true);

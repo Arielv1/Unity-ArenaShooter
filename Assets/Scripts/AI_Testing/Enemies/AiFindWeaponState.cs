@@ -77,8 +77,13 @@ public class AiFindWeaponState : AiState
 
     void FindTarget(AiAgent agent)
     {
-        Debug.Log("Ai: " + agent.gameObject.name + " | FindTarget");
-        int count = agent.sensor.Filter(objects, "Character");
+        int count = 0;
+        if (agent.gameObject.name == "Ally_Supporter")
+            count = agent.sensor.Filter(objects, "Enemy");
+        else
+        {
+            count = agent.sensor.Filter(objects, "Character");
+        }
         if (count > 0)
         {
             agent.stateMachine.ChangeState(AiStateId.AttackPlayer);
