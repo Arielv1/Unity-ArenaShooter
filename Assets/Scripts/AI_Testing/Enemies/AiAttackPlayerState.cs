@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class AiAttackPlayerState : AiState
 {
+    private float stoppingDistance;
     public void Enter(AiAgent agent)
     {
         agent.weapons.ActivateWeapon();
-        agent.weapons.SetTarget(agent.playerTransform);
-        agent.navMeshAgent.stoppingDistance = agent.config.attackSpeed;
+        agent.weapons.SetTarget(agent.targetTransform);
+        if (agent.gameObject.name == "AI_Commander")
+        {
+            stoppingDistance = agent.config.commanderAttackDistance;
+        }
+        else
+        {
+            stoppingDistance = agent.config.supporterAttackDistance;
+        }
+        agent.navMeshAgent.stoppingDistance = stoppingDistance;
         //agent.weapons.SetFiring(true);
     }
 
@@ -25,20 +34,19 @@ public class AiAttackPlayerState : AiState
 
     public void Update(AiAgent agent)
     {
-        agent.navMeshAgent.destination = agent.playerTransform.position;
+        agent.navMeshAgent.destination = agent.targetTransform.position;
         ReloadWeapon(agent);
         UpdateFiring(agent);
-        if (agent.playerTransform.GetComponent<PlayerHealth>().IsDead())
+
+        if (agent.targetTransform.GetComponent<PlayerHealth>().IsDead())
         {
             agent.stateMachine.ChangeState(AiStateId.Idle);
         }
-
     }
 
     private void UpdateFiring(AiAgent agent)
     {
-        //Debug.Log("player type: " + agent.playerTransform.gameObject.name);
-        if (agent.sensor.IsInSight(agent.playerTransform.gameObject))
+        if (agent.sensor.IsInSight(agent.targetTransform.gameObject))
         {
             agent.weapons.SetFiring(true);
         }

@@ -9,6 +9,7 @@ public class AiAgentConfig : ScriptableObject
     public float maxDistance = 1.0f;
     public float dieForce = 10.0f;
     public float findWeaponSpeed = 5;
-    public float attackSpeed = 5.0f;
-    public float followDistance = 3;
+    public float commanderAttackDistance = 10.0f;
+    public float supporterAttackDistance = 8.0f;
+    public float followDistance = 2;
 }

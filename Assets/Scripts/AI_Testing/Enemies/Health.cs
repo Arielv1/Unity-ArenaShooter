@@ -55,4 +55,9 @@ public class Health : MonoBehaviour
         float intensity = (lerp * blinkIntensity) + 1.0f;
         skinnedMeshRenderer.material.color = Color.white * intensity;
     }
+
+    public bool IsDead()
+    {
+        return currentHealth <= 0.0f;
+    }
 }

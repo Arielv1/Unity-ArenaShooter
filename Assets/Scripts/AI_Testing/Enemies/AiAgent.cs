@@ -9,12 +9,13 @@ public class AiAgent : MonoBehaviour
     public AiAgentConfig config;
 
     public Transform commanderTransform = null;
+    public AiAgent supporter = null;
     [HideInInspector] public AiStateMachine stateMachine;
     [HideInInspector] public NavMeshAgent navMeshAgent;
     [HideInInspector] public Ragdoll ragdoll;
     [HideInInspector] public SkinnedMeshRenderer mesh;
     [HideInInspector] public UIHealthBar ui;
-    [HideInInspector] public Transform playerTransform;
+    [HideInInspector] public Transform targetTransform;
     [HideInInspector] public AiWeapons weapons;
     [HideInInspector] public AiSensor sensor;
 
@@ -27,7 +28,11 @@ public class AiAgent : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         weapons = GetComponent<AiWeapons>();
         sensor = GetComponent<AiSensor>();
-        playerTransform = GameObject.FindGameObjectWithTag("Allies").transform;
+
+        if (gameObject.name == "Ally_Supporter")
+            targetTransform = GameObject.FindGameObjectWithTag("Enemy Commander").transform;
+        else
+            targetTransform = GameObject.FindGameObjectWithTag("Allies").transform;
 
         stateMachine = new AiStateMachine(this);
         stateMachine.RegisterState(new AiChasePlayerState());
