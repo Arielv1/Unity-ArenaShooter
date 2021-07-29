@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    #region Singleton
 
+    #region Singleton
+    public GameObject player;
     public static PlayerManager instance;
 
     void Awake()
     {
-        instance = this;    
+        instance = this;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     #endregion
-
-    public GameObject player;
+    
 }

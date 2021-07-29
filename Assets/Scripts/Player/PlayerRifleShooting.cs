@@ -13,6 +13,7 @@ public class PlayerRifleShooting : MonoBehaviour
     public GameObject rifle;
     private Camera fpsCamera;
     public ParticleSystem muzzleFlash;
+    public ParticleSystem hitWallEffect;
 
     public static int RIFLE_MAX_AMMO = 30;
     private int ammoLeft;
@@ -42,7 +43,7 @@ public class PlayerRifleShooting : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
         {
-            if (hit.transform.tag != "Allies" && hit.transform.tag != "Enemy" && hit.transform.tag != "Ground" && hit.transform.tag != "Enemy Commander")
+            if (hit.transform.tag != "Allies" && !hit.transform.tag.Contains("Enemy") && hit.transform.tag != "Ground")
             {
                 Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
                 var hitBox = hit.collider.GetComponent<HitBox>();
@@ -52,9 +53,15 @@ public class PlayerRifleShooting : MonoBehaviour
                 }
 
             }
-            else
+            else if (hit.transform.tag.Contains("Enemy"))
             {
                 hitEnemy(hit.transform.gameObject);
+            } 
+            else if (hit.transform.tag == "Ground")
+            {
+                hitWallEffect.transform.position = hit.point;
+                hitWallEffect.transform.forward = hit.normal;
+                hitWallEffect.Emit(1);
             }
         }
         UpdateAmmoTextCanvas();
@@ -73,8 +80,6 @@ public class PlayerRifleShooting : MonoBehaviour
     }
     public void hitEnemy(GameObject enemy)
     {
-        Debug.Log(transform.name + " attacked " + enemy.transform.name);
-        CharacterStats sn = enemy.GetComponent<CharacterStats>();
-        sn.TakeDamage(dealDamage);
+        enemy.GetComponent<Health>().TakeDamage(dealDamage, (this.transform.position - enemy.transform.position));
     }
 }

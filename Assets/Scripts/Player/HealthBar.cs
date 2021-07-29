@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class HealthBar : SliderBar
 {
 
-    public override void SetMaxValue(int value)
+    public override void SetMaxValue(float value)
     {
         base.SetMaxValue(value);
     }
 
-    public override void SetValue(int value)
+    public override void SetValue(float value)
     {
         base.SetValue(value);
     }

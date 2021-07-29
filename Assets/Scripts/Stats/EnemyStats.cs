@@ -8,7 +8,7 @@ public class EnemyStats : CharacterStats
     public Animator animator;
 
 
-    public override void TakeDamage(int damage)
+    public override void TakeDamage(float damage)
     {
         animator.SetBool("gotHit", true);
         base.TakeDamage(damage);

@@ -16,7 +16,7 @@ public class DoorAnimation : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Allies" || other.tag == "Enemy")
+        if (other.tag == "Allies" || other.tag.Contains("Enemy") || other.tag == "Player")
         {
             countInside++;
             HandleAnimation();
@@ -25,7 +25,7 @@ public class DoorAnimation : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Allies" || other.tag == "Enemy")
+        if (other.tag == "Allies" || other.tag.Contains("Enemy") || other.tag == "Player")
         {
             countInside--;
             HandleAnimation();

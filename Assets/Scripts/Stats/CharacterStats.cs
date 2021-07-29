@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth;
+    public float currentHealth;
     private int currentStamina;
 
     public HealthBar healthbar;
@@ -28,7 +28,7 @@ public class CharacterStats : MonoBehaviour
 
     }
 
-    public virtual void TakeDamage(int damage)
+    public virtual void TakeDamage(float damage)
     {
 
         currentHealth -= damage;

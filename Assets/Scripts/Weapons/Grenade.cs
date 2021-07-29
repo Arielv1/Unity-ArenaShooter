@@ -8,7 +8,7 @@ public class Grenade : MonoBehaviour
     public float delay = 3f;
     public float radius = 5f;
     public float force = 700f;
-
+    public float maxDamage = 100f;
     public GameObject exposionEffect;
     private float countdown;
     private bool hasExploded = false;
@@ -49,7 +49,18 @@ public class Grenade : MonoBehaviour
                 rb.AddExplosionForce(force, transform.position, radius);
             }
 
-             // Damage
+            // Damage
+            
+            Vector3 distanceVector = (this.transform.position) - (nearbyObject.transform.position);
+            float damageToDeal = maxDamage - 15 * (distanceVector).magnitude;
+            if (nearbyObject.tag == "Player")
+            {
+                nearbyObject.GetComponent<PlayerHealth>().TakeDamage(damageToDeal, distanceVector);
+            }
+            else if (nearbyObject.tag.Contains("Enemy") || nearbyObject.tag == "Allies")
+            {
+                nearbyObject.GetComponent<Health>().TakeDamage(damageToDeal, distanceVector);
+            }
         }
 
         sr.color = new Color(0f, 0f, 0f, 0f);
