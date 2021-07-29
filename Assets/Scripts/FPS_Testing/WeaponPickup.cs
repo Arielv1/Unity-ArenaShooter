@@ -20,7 +20,7 @@ public class WeaponPickup : MonoBehaviour
         }
 
         AiWeapons AiWeapons = other.gameObject.GetComponent<AiWeapons>();
-        if (AiWeapons)
+        if (AiWeapons && (other.gameObject.name == "Player" || other.gameObject.name == "AI_Commander"))
         {
             // Commander
             RaycastWeapon newCommanderWeapon = Instantiate(weaponPrefab);

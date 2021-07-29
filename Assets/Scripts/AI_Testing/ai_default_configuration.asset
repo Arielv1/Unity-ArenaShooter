@@ -17,5 +17,5 @@ MonoBehaviour:
   dieForce: 2
   findWeaponSpeed: 5
   commanderAttackDistance: 10
-  supporterAttackDistance: 8
+  supporterAttackDistance: 9
   followDistance: 2
