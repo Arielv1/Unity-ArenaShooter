@@ -36,7 +36,7 @@ public class AiFindWeaponState : AiState
         {
             pickup = FindPickup(agent);
             if (pickup)
-            { 
+            {
                 CollectPickup(agent, pickup);
             }
         }
@@ -46,7 +46,7 @@ public class AiFindWeaponState : AiState
             FindTarget(agent);
         }
 
-        if (agent.gameObject.name == "AI_Commander")
+        if (agent.gameObject.name == "AI_Commander" && !pickup)
         {
             // Wander
             if (!agent.navMeshAgent.hasPath)
