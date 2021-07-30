@@ -8,9 +8,16 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public Transform playerCamera = null;
 
+    [Range(.1f, 10f)]
     [SerializeField] public float mouseSensitivity = 3.5f;
     [SerializeField] public float walkSpeed = 6.0f;
     [SerializeField] public float gravity = -13.0f;
+    [SerializeField] public float jumpForce = 1.20f;
+    [SerializeField] public Transform groundChecker;
+    [SerializeField] public LayerMask groundMask;
+    [Range(.1f, 2f)]
+    [SerializeField] public float groundCheckRadius = 0.4f;
+    private bool isGrounded;
     [SerializeField][Range(0.0f, 0.5f)] public float moveSmoothTime = 0.3f;
     [SerializeField] [Range(0.0f, 0.5f)] public float mouseSmoothTime = 0.03f;
 
@@ -43,8 +50,24 @@ public class PlayerController : MonoBehaviour
     {
         UpdateMouseLook();
         UpdateMovement();
+        Jump();
 
     }
+
+    void Jump()
+    {
+        isGrounded = Physics.OverlapSphere(groundChecker.position,
+                                           groundCheckRadius,
+                                           groundMask).Length > 0;
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Vector3 jumpDirection = Vector3.zero;
+            jumpDirection.y = jumpForce + transform.position.y;
+            controller.Move(jumpDirection * Time.deltaTime);
+            AudioManager.Instance.Play("Jump");
+        }
+    }
+
 
     void UpdateMouseLook()
     {
