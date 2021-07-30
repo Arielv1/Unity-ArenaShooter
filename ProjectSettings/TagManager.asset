@@ -7,14 +7,15 @@ TagManager:
   - Shootable
   - GrenadeIcon
   - CanvasAmmo
-  - PickUpGranade
   - Allies
   - PlayerWeapon
-  - PickUpGrenade
   - Enemy
   - Enemy Commander
   - PickupLaser
   - PickupRifle
+  - PickupGrenade
+  - PickUpGrenade
+  - PickUpGranade
   layers:
   - Default
   - TransparentFX

@@ -22,16 +22,15 @@ public class PlayerCrosshairRaycaster : MonoBehaviour
         //raycast forward from main camera
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, hitRange))
         {
-            if (hit.transform.gameObject.tag == "PickupRifle" || hit.transform.gameObject.tag == "PickupLaser" || hit.transform.gameObject.tag == "PickUpGrenade")
+            if (hit.transform.tag.Contains("Pickup"))
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (hit.transform.gameObject.tag == "PickupRifle")
+                    if (hit.transform.tag.Contains("Rifle"))
                     {
                         ActiveWeapon activeWeapon = gameObject.GetComponent<ActiveWeapon>();
                         if (activeWeapon)
                         {
-                            Debug.Log("got here!1");
                             RaycastWeapon newWeapon = Instantiate(riflePrefab);
                             activeWeapon.Equip(newWeapon);
                             // Supporter
@@ -39,7 +38,7 @@ public class PlayerCrosshairRaycaster : MonoBehaviour
                             gameObject.GetComponent<PlayerController>().supporter.GetComponent<AiWeapons>().Equip(newSupporterWeapon);
                         }
                     }
-                    else if (hit.transform.gameObject.tag == "PickupLaser")
+                    else if (hit.transform.tag.Contains("Laser"))
                     {
                         ActiveWeapon activeWeapon = gameObject.GetComponent<ActiveWeapon>();
                         if (activeWeapon)
@@ -50,6 +49,9 @@ public class PlayerCrosshairRaycaster : MonoBehaviour
                             RaycastWeapon newSupporterWeapon = Instantiate(laserPrefab);
                             gameObject.GetComponent<PlayerController>().supporter.GetComponent<AiWeapons>().Equip(newSupporterWeapon);
                         }
+                    } else if (hit.transform.tag.Contains("Grenade"))
+                    {
+                        GetComponent<GrenadeThrower>().IncrementNumGrenades();
                     }
                     hit.transform.gameObject.SetActive(false);
                 }

@@ -19141,7 +19141,7 @@ MonoBehaviour:
     type: 3}
   ammoCount: 15
   clipSize: 15
-  damage: 20
+  damage: 40
   raycastOrigin: {fileID: 7148644192245504719}
 --- !u!65 &2002904830871029742
 BoxCollider:

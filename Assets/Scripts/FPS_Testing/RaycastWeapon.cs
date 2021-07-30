@@ -166,8 +166,8 @@ public class RaycastWeapon : MonoBehaviour
         {
             return;
         }
-        ammoCount--;    
-
+        ammoCount--;
+        AudioManager.Instance.Play(ActiveWeapon.WeaponSlot.Primary == weaponSlot ? "Rifle" : "Laser");
         muzzleFlash.Emit(1);
 
         Vector3 velocity = (target - raycastOrigin.position).normalized * bulletSpeed;
