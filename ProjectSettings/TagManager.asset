@@ -10,10 +10,11 @@ TagManager:
   - PickUpGranade
   - Allies
   - PlayerWeapon
-  - PickUpGun
   - PickUpGrenade
   - Enemy
   - Enemy Commander
+  - PickupLaser
+  - PickupRifle
   layers:
   - Default
   - TransparentFX

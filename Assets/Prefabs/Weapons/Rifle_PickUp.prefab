@@ -14251,7 +14251,7 @@ GameObject:
   - component: {fileID: 5569543509627130863}
   m_Layer: 6
   m_Name: Rifle_PickUp
-  m_TagString: PickUpGun
+  m_TagString: PickupRifle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
