@@ -70,6 +70,10 @@ PrefabInstance:
       value: Grenade_WorldPickUp
       objectReference: {fileID: 0}
     - target: {fileID: 123396, guid: d6c1b1c4c00b08c4d84c7adc9668a6fb, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 123396, guid: d6c1b1c4c00b08c4d84c7adc9668a6fb, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxValue(maxHealth);
     }
 
     public void TakeDamage(float amount, Vector3 direction)
@@ -33,6 +34,11 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         Debug.Log("The player is dead!");
+        // end game
+        GetComponent<PlayerController>().enabled = false;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+        FindObjectOfType<GameController>().GameOver();
     }
     public void Update()
     {

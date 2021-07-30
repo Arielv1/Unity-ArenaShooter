@@ -10,17 +10,20 @@ public class AiWeaponPickup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            return;
-        }
-        ActiveWeapon activeWeapon = other.gameObject.GetComponent<ActiveWeapon>();
-        if (activeWeapon)
-        {
-            RaycastWeapon newWeapon = Instantiate(weaponPrefab);
-            activeWeapon.Equip(newWeapon);
-            // Supporter
-            RaycastWeapon newSupporterWeapon = Instantiate(weaponPrefab);
-            other.gameObject.GetComponent<PlayerController>().supporter.GetComponent<AiWeapons>().Equip(newSupporterWeapon);
-            Destroy(gameObject);
+            Debug.Log("coliider triggered by player");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                ActiveWeapon activeWeapon = other.gameObject.GetComponent<ActiveWeapon>();
+                if (activeWeapon)
+                {
+                    RaycastWeapon newWeapon = Instantiate(weaponPrefab);
+                    activeWeapon.Equip(newWeapon);
+                    // Supporter
+                    RaycastWeapon newSupporterWeapon = Instantiate(weaponPrefab);
+                    other.gameObject.GetComponent<PlayerController>().supporter.GetComponent<AiWeapons>().Equip(newSupporterWeapon);
+                    Destroy(gameObject);
+                }
+            }
         }
 
         AiWeapons AiWeapons = other.gameObject.GetComponent<AiWeapons>();

@@ -185,7 +185,9 @@ MonoBehaviour:
   delay: 3
   radius: 5
   force: 500
-  exposionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 3}
+  maxDamage: 100
+  exposionEffect: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 3}
 --- !u!82 &8442164804051090184
 AudioSource:
   m_ObjectHideFlags: 0

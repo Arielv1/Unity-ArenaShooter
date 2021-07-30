@@ -67,7 +67,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 123396, guid: d6c1b1c4c00b08c4d84c7adc9668a6fb, type: 3}
       propertyPath: m_Name
-      value: Grenade_WorldPickUp
+      value: Grenade_WorldPickUp Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 123396, guid: d6c1b1c4c00b08c4d84c7adc9668a6fb, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 123396, guid: d6c1b1c4c00b08c4d84c7adc9668a6fb, type: 3}
       propertyPath: m_TagString
@@ -141,6 +145,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: d6c1b1c4c00b08c4d84c7adc9668a6fb, type: 3}
 --- !u!1 &3159166962615633871 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 123396, guid: d6c1b1c4c00b08c4d84c7adc9668a6fb, type: 3}
+  m_CorrespondingSourceObject: {fileID: 123396, guid: d6c1b1c4c00b08c4d84c7adc9668a6fb,
+    type: 3}
   m_PrefabInstance: {fileID: 3159166962615657931}
   m_PrefabAsset: {fileID: 0}

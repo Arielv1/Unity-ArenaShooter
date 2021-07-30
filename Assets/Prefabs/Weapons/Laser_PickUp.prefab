@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3855294125286264036}
   - component: {fileID: 3855294125286264039}
   - component: {fileID: 3855294125286264038}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Laser_PickUp
   m_TagString: PickUpGun
   m_Icon: {fileID: 0}
@@ -126,5 +126,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.43297127, y: 9.029433, z: 2.7344952}
+  m_Size: {x: 1, y: 9, z: 3}
   m_Center: {x: -0.010603902, y: -0.89936376, z: 0.10362834}
