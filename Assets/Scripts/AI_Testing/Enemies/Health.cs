@@ -47,6 +47,7 @@ public class Health : MonoBehaviour
         AiDeathState deathState = agent.stateMachine.GetState(AiStateId.Death) as AiDeathState;
         deathState.direction = direction;
         agent.stateMachine.ChangeState(AiStateId.Death);
+        GameObject.Find("GameManager").GetComponent<GameController>().checkVictory();
     }
     public void Update()
     {

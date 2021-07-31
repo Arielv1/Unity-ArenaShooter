@@ -19,7 +19,6 @@ public class AiAttackPlayerState : AiState
             stoppingDistance = agent.config.supporterAttackDistance;
         }
         agent.navMeshAgent.stoppingDistance = stoppingDistance;
-        //agent.weapons.SetFiring(true);
     }
 
     public void Exit(AiAgent agent)
@@ -45,6 +44,17 @@ public class AiAttackPlayerState : AiState
                 agent.stateMachine.ChangeState(AiStateId.Idle);
             }
         }
+        else if (agent.gameObject.name == "Ally_Supporter")
+        {
+            GameObject enemy = GameObject.FindWithTag("Enemy");
+            GameObject enemyCommander = GameObject.FindWithTag("Enemy Commander");
+
+            if (enemy.GetComponent<Health>().IsDead() && enemyCommander.GetComponent<Health>().IsDead())
+            {
+                agent.stateMachine.ChangeState(AiStateId.Idle);
+            }
+        }
+
         else
         {
             agent.navMeshAgent.destination = agent.commanderTransform.position;

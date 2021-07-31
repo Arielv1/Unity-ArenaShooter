@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour
 
     public void Victory()
     {
-        Debug.Log("Match Won!");
         victoryUI.SetActive(true);
     }
 
@@ -25,16 +24,15 @@ public class GameController : MonoBehaviour
     }
     public void checkVictory()
     {
-        Debug.Log("checkGameOverForEnemies called");
+        GameObject enemy = GameObject.FindWithTag("Enemy");
+        GameObject enemyCommander = GameObject.FindWithTag("Enemy Commander");
 
-        GameObject Enemy = GameObject.FindWithTag("Enemy");
-        GameObject theEnemyCommander = GameObject.FindWithTag("Enemy Commander");
-        if (theEnemyCommander == null && Enemy == null && !gameHasEnded)
+        
+        if (enemy.GetComponent<Health>().IsDead() && enemyCommander.GetComponent<Health>().IsDead() && !gameHasEnded)
         {
             gameHasEnded = true;
             Victory();
         }
-        // Debug.Log("There are still enemies in the game.");
         return;
     }
 }

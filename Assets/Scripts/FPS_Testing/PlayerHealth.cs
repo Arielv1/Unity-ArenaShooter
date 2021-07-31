@@ -20,7 +20,6 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float amount, Vector3 direction)
     {
         currentHealth -= amount;
-        Debug.Log("currentHealth = " + currentHealth);
         if (IsDead())
         {
             Die();
@@ -33,7 +32,6 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Die()
     {
-        Debug.Log("The player is dead!");
         // end game
         GetComponent<PlayerController>().enabled = false;
         Cursor.visible = true;
