@@ -121,7 +121,7 @@ public class ActiveWeapon : MonoBehaviour
         if (weapon)
         {
             weapon.gameObject.SetActive(false);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
@@ -131,7 +131,7 @@ public class ActiveWeapon : MonoBehaviour
         if (weapon)
         {
             weapon.gameObject.SetActive(true);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 
