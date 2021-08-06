@@ -12,6 +12,9 @@ public class SpawnWeapons : MonoBehaviour
     public Transform LaserSpawnPositions;
     public GameObject GrenadePrefab;
     public Transform GrenadeSpawnPositions;
+
+    [Range (0f, 100f)]
+    public float SpawnPercentage = 55f;
     
     void Start()
     {
@@ -24,8 +27,12 @@ public class SpawnWeapons : MonoBehaviour
     {
         foreach (Transform currentPosition in positions)
         {
-            GameObject instance = Instantiate(weaponPrefab, currentPosition.position, Quaternion.identity);
-            instance.transform.rotation = weaponPrefab.transform.rotation;
+            if (SpawnPercentage >= Random.Range (0f, 100f))
+            {
+                GameObject instance = Instantiate(weaponPrefab, currentPosition.position, Quaternion.identity);
+                instance.transform.rotation = weaponPrefab.transform.rotation;
+            }
+            
         }
     }
 }
