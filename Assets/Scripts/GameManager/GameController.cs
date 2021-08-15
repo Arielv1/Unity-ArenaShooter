@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
         if (!gameHasEnded)
         {
             gameHasEnded = true;
+            GameObject ally = GameObject.FindWithTag("Allies");
+            ally.GetComponent<AiAgent>().stateMachine.ChangeState(AiStateId.Idle);
             GameOverScreen.Setup();
         }
     }
