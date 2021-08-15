@@ -12,7 +12,6 @@ public class GameOverScreen : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
-        Debug.Log("here");
         gameObject.SetActive(true);
     }
 

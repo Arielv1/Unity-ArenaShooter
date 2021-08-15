@@ -8,16 +8,23 @@ public class AiWeaponPickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        AiWeapons AiWeapons = other.gameObject.GetComponent<AiWeapons>();
-        if (AiWeapons && (other.gameObject.name == "Player" || other.gameObject.name == "AI_Commander"))
+        if (gameObject.name == "Grenade_WorldPickUp")
         {
-            // Commander
-            RaycastWeapon newCommanderWeapon = Instantiate(weaponPrefab);
-            AiWeapons.Equip(newCommanderWeapon);
-            // Supporter
-            RaycastWeapon newSupporterWeapon = Instantiate(weaponPrefab);
-            other.gameObject.GetComponent<AiAgent>().supporter.GetComponent<AiWeapons>().Equip(newSupporterWeapon);
             Destroy(gameObject);
+        }
+        else
+        {
+            AiWeapons AiWeapons = other.gameObject.GetComponent<AiWeapons>();
+            if (AiWeapons && (other.gameObject.name == "Player" || other.gameObject.name == "AI_Commander"))
+            {
+                // Commander
+                RaycastWeapon newCommanderWeapon = Instantiate(weaponPrefab);
+                AiWeapons.Equip(newCommanderWeapon);
+                // Supporter
+                RaycastWeapon newSupporterWeapon = Instantiate(weaponPrefab);
+                other.gameObject.GetComponent<AiAgent>().supporter.GetComponent<AiWeapons>().Equip(newSupporterWeapon);
+                Destroy(gameObject);
+            }
         }
     }
 }

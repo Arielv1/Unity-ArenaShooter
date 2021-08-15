@@ -79,6 +79,7 @@ public class ActiveWeapon : MonoBehaviour
     {
         int weaponSlotIndex = (int)newWeapon.weaponSlot;
         var weapon = GetWeapon(weaponSlotIndex);
+        
         if (weapon)
         {
             Destroy(weapon.gameObject);
@@ -87,10 +88,9 @@ public class ActiveWeapon : MonoBehaviour
         weapon = newWeapon;
         weapon.transform.SetParent(weaponSlots[weaponSlotIndex], false);
         equipped_weapons[weaponSlotIndex] = weapon;
-
+        
         SetActiveWeapon(newWeapon.weaponSlot);
-
-        ammoWidget.Refresh(weapon.ammoCount);
+        //ammoWidget.Refresh(weapon.ammoCount);
 
     }
 
