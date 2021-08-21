@@ -49,9 +49,10 @@ public class AiAttackPlayerState : AiState
             GameObject enemy = GameObject.FindWithTag("Enemy");
             GameObject enemyCommander = GameObject.FindWithTag("Enemy Commander");
 
-            if (enemy.GetComponent<Health>().IsDead() && enemyCommander.GetComponent<Health>().IsDead())
+            if (enemy.GetComponent<Health>().IsDead() && enemyCommander.GetComponent<Health>().IsDead() || GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().IsDead())
             {
                 agent.stateMachine.ChangeState(AiStateId.Idle);
+                Debug.Log("Ai is idle");
             }
         }
 

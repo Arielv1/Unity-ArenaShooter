@@ -97425,6 +97425,11 @@ PrefabInstance:
       propertyPath: supporter
       value: 
       objectReference: {fileID: 8591852308771863572}
+    - target: {fileID: 2017126423294723158, guid: 6650b6a563ba1c248b5819d95126d794,
+        type: 3}
+      propertyPath: initialState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2504845382278967424, guid: 6650b6a563ba1c248b5819d95126d794,
         type: 3}
       propertyPath: m_ConnectedAnchor.x

@@ -20,7 +20,6 @@ public class GameController : MonoBehaviour
         {
             gameHasEnded = true;
             GameObject ally = GameObject.FindWithTag("Allies");
-            ally.GetComponent<AiAgent>().stateMachine.ChangeState(AiStateId.Idle);
             GameOverScreen.Setup();
         }
     }
@@ -29,7 +28,6 @@ public class GameController : MonoBehaviour
         GameObject enemy = GameObject.FindWithTag("Enemy");
         GameObject enemyCommander = GameObject.FindWithTag("Enemy Commander");
 
-        
         if (enemy.GetComponent<Health>().IsDead() && enemyCommander.GetComponent<Health>().IsDead() && !gameHasEnded)
         {
             gameHasEnded = true;
