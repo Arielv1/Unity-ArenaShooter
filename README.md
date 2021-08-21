@@ -1,7 +1,7 @@
 # Unity-ArenaShooter
 3D Arena shooter with both friendly and hostile AI
 
-Controls:
+## Controls:
 
 * W A S D for movement
 * Q to throw a grenade.
