@@ -1918,7 +1918,7 @@ MonoBehaviour:
   GrenadePrefab: {fileID: 1952236374851418868, guid: 34797a4cfe3a8e14db2286f529a40e5a,
     type: 3}
   GrenadeSpawnPositions: {fileID: 73120315}
-  SpawnPercentage: 100
+  SpawnPercentage: 55
 --- !u!114 &872873264
 MonoBehaviour:
   m_ObjectHideFlags: 0
