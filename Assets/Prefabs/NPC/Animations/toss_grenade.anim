@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: toss grenade
+  m_Name: toss_grenade
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -5411,7 +5411,8 @@ AnimationClip:
         time: 1.7
         value: {x: 0.011351111, y: 0.17203617, z: 0.0145480735, w: 0.9849178}
         inSlope: {x: 0.0000026226044, y: -0.0000013113022, z: -0.00000024214387, w: 0.00000043213367}
-        outSlope: {x: 0.0000026226044, y: -0.0000013113022, z: -0.00000024214387, w: 0.00000043213367}
+        outSlope: {x: 0.0000026226044, y: -0.0000013113022, z: -0.00000024214387,
+          w: 0.00000043213367}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
@@ -13025,7 +13026,8 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
         time: 2.0666668
-        value: {x: -0.00000043207422, y: -0.000000040528782, z: -0.00000006955189, w: 1}
+        value: {x: -0.00000043207422, y: -0.000000040528782, z: -0.00000006955189,
+          w: 1}
         inSlope: {x: -0.029549012, y: 0.000554478, z: -0.08822445, w: 0.0002878907}
         outSlope: {x: -0.029549012, y: 0.000554478, z: -0.08822445, w: 0.0002878907}
         tangentMode: 0
@@ -13034,7 +13036,8 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
         time: 2.2333333
-        value: {x: -0.00000061060575, y: 0.000000013613346, z: 0.0000000015460039, w: 1}
+        value: {x: -0.00000061060575, y: 0.000000013613346, z: 0.0000000015460039,
+          w: 1}
         inSlope: {x: -0.00728159, y: -0.0000008163016, z: 0.00000016296825, w: -0.0000017881283}
         outSlope: {x: -0.00728159, y: -0.0000008163016, z: 0.00000016296825, w: -0.0000017881283}
         tangentMode: 0
@@ -13115,7 +13118,8 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
       - serializedVersion: 3
         time: 3.2000003
-        value: {x: 0.00000039955304, y: 0.000000036451617, z: -0.000000030707213, w: 1}
+        value: {x: 0.00000039955304, y: 0.000000036451617, z: -0.000000030707213,
+          w: 1}
         inSlope: {x: 0.000034056313, y: 0.0000013122637, z: -0.0000010370117, w: 0}
         outSlope: {x: 0.000034056313, y: 0.0000013122637, z: -0.0000010370117, w: 0}
         tangentMode: 0
@@ -15120,7 +15124,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

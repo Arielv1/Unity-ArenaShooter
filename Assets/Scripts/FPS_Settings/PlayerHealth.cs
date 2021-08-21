@@ -26,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
+            UiStatusManager.instance.UpdateStatusText("You Are Taking Damage ");
             healthBar.SetValue(currentHealth);
         }
 

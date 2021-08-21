@@ -35,8 +35,16 @@ public class Health : MonoBehaviour
     {
         currentHealth -= amount;
         healthBar.SetHealthBarPercentage(currentHealth / maxHealth);
+        if (agent.tag == "Allies")
+            UiStatusManager.instance.UpdateStatusText("Your Ally Is Taking Damage");
+
         if (currentHealth <= 0.0f)
         {
+            if (agent.tag == "Allies")
+                UiStatusManager.instance.UpdateStatusText("An Ally Has Been Killed");
+            else
+                UiStatusManager.instance.UpdateStatusText("An Enemy Has Been Killed");
+
             Die(direction);
         }
 

@@ -16,6 +16,7 @@ TagManager:
   - PickupGrenade
   - PickUpGrenade
   - PickUpGranade
+  - UIStatus
   layers:
   - Default
   - TransparentFX
