@@ -3,6 +3,7 @@
 
 ## Controls:
 
-* W A S D for movement
-* Q to throw a grenade.
-* Left Mouse Click / Primary Mouse Button to Shoot your current Gun (2 types)
+* W A S D - movement
+* Q - throw a grenade.
+* Left Mouse Click/Primary Mouse Button - Shoot your current gun (2 types)
+* E - pickup a gun/grenade.
