@@ -22,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
         if (IsDead())
         {
-            Debug.Log("Player died");
             Die();
         }
         else

@@ -52,7 +52,6 @@ public class AiAttackPlayerState : AiState
             if (enemy.GetComponent<Health>().IsDead() && enemyCommander.GetComponent<Health>().IsDead() || GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().IsDead())
             {
                 agent.stateMachine.ChangeState(AiStateId.Idle);
-                Debug.Log("Ai is idle");
             }
         }
 
@@ -66,6 +65,10 @@ public class AiAttackPlayerState : AiState
     {
         if (agent.sensor.IsInSight(agent.targetTransform.gameObject))
         {
+            if (agent.GetComponent<AiGrenadeThrower>().enabled)
+            {
+                agent.GetComponent<AiGrenadeThrower>().ThrowGrenade();
+            }
             agent.weapons.SetFiring(true);
         }
         else

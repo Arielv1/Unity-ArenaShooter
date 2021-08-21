@@ -10,6 +10,7 @@ public class AiWeaponPickup : MonoBehaviour
     {
         if (gameObject.name == "Grenade_WorldPickUp")
         {
+            other.gameObject.GetComponent<AiGrenadeThrower>().enabled = true;
             Destroy(gameObject);
         }
         else
